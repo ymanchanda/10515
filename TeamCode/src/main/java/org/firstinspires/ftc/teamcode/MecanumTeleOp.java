@@ -14,9 +14,6 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 @TeleOp(name = "XtremeV Mecanum Teleop ", group = "Team10515")
 public class MecanumTeleOp extends OpMode
 {
-
-
-
     /* Declare OpMode members. */
     RR10515HardwareMap robot = new RR10515HardwareMap(); // use the class created to define a Pushbot's hardware
     // could also use HardwarePushbotMatrix class.
@@ -129,6 +126,15 @@ public class MecanumTeleOp extends OpMode
         robot.BLeftMotor.setPower(leftRear);
         robot.BRightMotor.setPower(rightRear);
 
+        if (gamepad1.a)
+        {
+            robot.latchSlideMotor.setPower(-.5);
+        }
+        if (gamepad1.y)
+        {
+            robot.latchSlideMotor.setPower(.5);
+        }
+
  /*    double r = Math.hypot(gamepad1.left_stick_x, gamepad1.left_stick_y);
        double robotAngle = Math.atan2(gamepad1.left_stick_y, gamepad1.left_stick_x) - Math.PI / 4;
        double rightX = gamepad1.right_stick_x;
@@ -221,7 +227,7 @@ public class MecanumTeleOp extends OpMode
         robot.FrightMotor.setPower(0.0);
         robot.BLeftMotor.setPower(0.0);
         robot.BRightMotor.setPower(0.0);
-
+        robot.latchSlideMotor.setPower(0.0);
     }
 }
 

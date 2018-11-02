@@ -101,15 +101,7 @@ public abstract class RR10515Base extends LinearOpMode {
         motor[rightServo] = 0;
     }
     */
-   public void mechmove (double myangle, double mypower, float myrot) {
-       if (robot.FleftMotor != null && robot.BLeftMotor != null && robot.FrightMotor != null && robot.BRightMotor != null)
-       {
-           robot.FleftMotor.setPower(Range.clip(myrot + (mypower * ((Math.sin((myangle + 135) / 180 * 3.141592)))), -1, 1));
-           robot.BLeftMotor.setPower(Range.clip(myrot + (mypower * ((Math.sin((myangle + 45) / 180 * 3.141592)))), -1, 1));
-           robot.FrightMotor.setPower(Range.clip(-myrot + (mypower * ((Math.sin((myangle + 45) / 180 * 3.141592)))), -1, 1));
-           robot.BRightMotor.setPower(Range.clip(-myrot + (mypower * ((Math.sin((myangle + 135) / 180 * 3.141592)))), -1, 1));
-       }
-   }
+
    public void moveStraightEncoder(int distance,double power)
    {
        robot.FrightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -249,44 +241,7 @@ public abstract class RR10515Base extends LinearOpMode {
         //robot.hWheel.setPower(0.0);
     }
 
-    /* public void handUp() {
 
-         robot.hand.setPosition(1.5);
-     }
-
-     public void handDown() {
-
-         robot.hand.setPosition(0);
-     }
-
-     public void clawOpen() {
-
-         robot.claw.setPosition(1);
-     }
- */
-    /*
-    public void clawClose() {
-        robot.claw.setPosition(0);
-    }
-
-    public void hLeft(double speed, double time) {
-        robot.hWheel.setPower(-speed);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() <= time)) {
-            telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
-            // telemetry.update();
-        }
-    }
-
-    public void hRight(double speed, double time) {
-        robot.hWheel.setPower(speed);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < time)) {
-            telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
-            //telemetry.update();
-        }
-    }
-*/
    /*public void moveByRange(double speed,double distanceToWall) {
 
         while (opModeIsActive() && getDistance() > distanceToWall ) {
@@ -308,8 +263,8 @@ public abstract class RR10515Base extends LinearOpMode {
     }
 */
 
-    public void liftUp(double speed, double time) {
-        //robot.liftMotor.setPower(speed);
+    public void latchUp(double speed, double time) {
+        robot.latchSlideMotor.setPower(speed);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() <= time)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
@@ -318,8 +273,8 @@ public abstract class RR10515Base extends LinearOpMode {
     }
 
 
-    public void liftDown(double speed, double time) {
-        // robot.liftMotor.setPower(speed);
+    public void latchDown(double speed, double time) {
+        robot.latchSlideMotor.setPower(-speed);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() <= time)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
@@ -419,7 +374,7 @@ public abstract class RR10515Base extends LinearOpMode {
         return color;
     }
 
-    /*  public String colorSense() {
+     /* public String colorSense() {
           robot.colorSensor.enableLed(true);
 
           String color = "NOT READ";

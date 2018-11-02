@@ -6,6 +6,7 @@ import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cRangeSensor;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -29,14 +30,14 @@ public class RR10515HardwareMap
     public DcMotor  FleftMotor = null;
     public DcMotor  BRightMotor = null;
     public DcMotor  BLeftMotor    = null;
-    // public DcMotor  relicSlideMotor    = null;
+    public DcMotor  latchSlideMotor    = null;
 
     // public Servo    hand   = null;
     //public Servo claw = null;
     // public Servo    relicHold = null;
     // public Servo    relicArm = null;
 
-    // public ColorSensor colorSensor     = null;
+     //public ColorSensor colorSensor     = null;
     public ColorSensor colorSensorRev = null;
     public BNO055IMU imu = null;
     //  public ModernRoboticsI2cRangeSensor rangeSensor = null;
@@ -45,14 +46,14 @@ public class RR10515HardwareMap
     static final String  FLEFT_MOTOR = "FrontLeft";
     static final String  BRIGHT_MOTOR = "BackRight";
     static final String  BLEFT_MOTOR = "BackLeft";
-    //  static final String  RELIC_SLIDE_MOTOR = "RelicSlideMotor";
+     static final String  LATCH_SLIDE_MOTOR = "LatchSlideMotor";
     //static final String  Claw = "Claw";
     //static final String  Hand = "Hand";
     //  static final String  RELIC_HOLD = "RelicHold";
     //  static final String  RELIC_ARM = "RelicArm";
 
-    //static final String  COLOR_SENSOR = "Color";
-    //static final String  COLOR_SENSORREV = "RevColor";
+   // static final String  COLOR_SENSOR = "Color";
+    static final String  COLOR_SENSORREV = "RevColor";
     static final String  IMU_SENSOR = "imu";
     //static final String  RANGE_SENSOR = "Range";
 
@@ -82,26 +83,26 @@ public class RR10515HardwareMap
         FrightMotor  = hwMap.dcMotor.get(FRIGHT_MOTOR);
         BLeftMotor    = hwMap.dcMotor.get (BLEFT_MOTOR);
         BRightMotor   = hwMap.dcMotor.get(BRIGHT_MOTOR);
-        // relicSlideMotor = hwMap.dcMotor.get(RELIC_SLIDE_MOTOR);
+        latchSlideMotor = hwMap.dcMotor.get(LATCH_SLIDE_MOTOR);
 
         //claw   = hwMap.servo.get(Claw);
         //   hand   = hwMap.servo.get(Hand);
         //   relicArm = hwMap.servo.get(RELIC_ARM);
         //   relicHold = hwMap.servo.get(RELIC_HOLD);
 
-//        colorSensor = hwMap.colorSensor.get(COLOR_SENSOR);
-        //colorSensorRev = hwMap.get(ColorSensor.class, COLOR_SENSORREV);
+      //colorSensor = hwMap.colorSensor.get(COLOR_SENSOR);
+        colorSensorRev = hwMap.get(ColorSensor.class, COLOR_SENSORREV);
         //  rangeSensor = hwMap.get(ModernRoboticsI2cRangeSensor.class, RANGE_SENSOR);
 
 
-        FleftMotor.setDirection((DcMotor.Direction.FORWARD));
-        FrightMotor.setDirection(DcMotor.Direction.REVERSE);
-        BLeftMotor.setDirection(DcMotor.Direction.FORWARD);
-        BRightMotor.setDirection((DcMotor.Direction.REVERSE));
-        //relicSlideMotor.setDirection(DcMotor.Direction.FORWARD);
+        FleftMotor.setDirection((DcMotor.Direction.REVERSE));
+        FrightMotor.setDirection(DcMotor.Direction.FORWARD);
+        BLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        BRightMotor.setDirection((DcMotor.Direction.FORWARD));
+        latchSlideMotor.setDirection(DcMotor.Direction.REVERSE);
 
-        //  colorSensor.enableLed(false);
-        //colorSensorRev.enableLed(false);
+          //colorSensor.enableLed(false);
+        colorSensorRev.enableLed(false);
         // rangeSensor.enableLed(false);
 
 
@@ -115,7 +116,7 @@ public class RR10515HardwareMap
         FleftMotor.setPower(0);
         BRightMotor.setPower(0);
         BLeftMotor.setPower(0);
-        // relicSlideMotor.setPower(0);
+        latchSlideMotor.setPower(0);
 
         //claw.setPosition(.5);
         //hand.setPosition(1);
@@ -129,7 +130,7 @@ public class RR10515HardwareMap
         BLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         // liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        // relicSlideMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        latchSlideMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
