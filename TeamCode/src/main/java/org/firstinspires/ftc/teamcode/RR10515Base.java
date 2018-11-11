@@ -274,7 +274,7 @@ public abstract class RR10515Base extends LinearOpMode {
 */
 
     public void latchUp(double speed, double time) {
-        robot.latchSlideMotor.setPower(speed);
+        //robot.latchSlideMotor.setPower(speed);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() <= time)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
@@ -284,7 +284,7 @@ public abstract class RR10515Base extends LinearOpMode {
 
 
     public void latchDown(double speed, double time) {
-        robot.latchSlideMotor.setPower(-speed);
+        //robot.latchSlideMotor.setPower(-speed);
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() <= time)) {
             telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());

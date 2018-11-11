@@ -123,9 +123,9 @@ import java.util.Locale;
             // Start the logging of measured acceleration
            // robot.imu.startAccelerationIntegration(new Position(), new Velocity(), 1000);
 
-            goStraight(0.3,0.2);
-            stopRobot();
-            sleep(1000 );
+            //goStraight(0.3,0.2);
+            //stopRobot();
+            //sleep(1000 );
             Orientation angles1 = robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             String angle = formatAngle(angles1.angleUnit, angles1.firstAngle);
             telemetry.addData("headingP",angle);
@@ -133,9 +133,9 @@ import java.util.Locale;
 
              telemetry.update();
             sleep(1000);
-            turnRight(0.4, 0.2);
-            stopRobot();
-            sleep(1000);
+            //turnRight(0.4, 0.2);
+            //stopRobot();
+            //sleep(1000);
             angles1 = robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             angle = formatAngle(angles1.angleUnit, angles1.firstAngle);
             telemetry.addData("headingP",angle);
@@ -143,9 +143,9 @@ import java.util.Locale;
             telemetry.update();
             sleep(1000);
 
-            turnLeft(0.4,0.2);
-            stopRobot();
-            sleep(1000);
+            //turnLeft(0.4,0.2);
+            //stopRobot();
+            //sleep(1000);
             angles1 = robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
             angle = formatAngle(angles1.angleUnit, angles1.firstAngle);
             telemetry.addData("headingP",angle);
@@ -153,10 +153,10 @@ import java.util.Locale;
             telemetry.update();
             sleep(1000);
 
-            repositionBot(-65.0);
-            repositionBotAntiClock(90.0);
+            //repositionBot(-65.0);
+            //repositionBotAntiClock(90.0);
 
-            sleep(5000);
+            //sleep(5000);
 
          //moveStraightEncoder(-746,0.3); //746 will move 12.35 inches on Rev Motor
           //  moveRSideEncoder(2238,.03);

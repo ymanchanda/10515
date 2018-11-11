@@ -46,7 +46,7 @@ public class RR10515HardwareMap
     static final String  FLEFT_MOTOR = "FrontLeft";
     static final String  BRIGHT_MOTOR = "BackRight";
     static final String  BLEFT_MOTOR = "BackLeft";
-     static final String  LATCH_SLIDE_MOTOR = "LatchSlideMotor";
+    //static final String  LATCH_SLIDE_MOTOR = "LatchSlideMotor";
     //static final String  Claw = "Claw";
     //static final String  Hand = "Hand";
     //  static final String  RELIC_HOLD = "RelicHold";
@@ -83,7 +83,7 @@ public class RR10515HardwareMap
         FrightMotor  = hwMap.dcMotor.get(FRIGHT_MOTOR);
         BLeftMotor    = hwMap.dcMotor.get (BLEFT_MOTOR);
         BRightMotor   = hwMap.dcMotor.get(BRIGHT_MOTOR);
-        latchSlideMotor = hwMap.dcMotor.get(LATCH_SLIDE_MOTOR);
+        //latchSlideMotor = hwMap.dcMotor.get(LATCH_SLIDE_MOTOR);
 
         //claw   = hwMap.servo.get(Claw);
         //   hand   = hwMap.servo.get(Hand);
@@ -99,7 +99,7 @@ public class RR10515HardwareMap
         FrightMotor.setDirection(DcMotor.Direction.FORWARD);
         BLeftMotor.setDirection(DcMotor.Direction.REVERSE);
         BRightMotor.setDirection((DcMotor.Direction.FORWARD));
-        latchSlideMotor.setDirection(DcMotor.Direction.REVERSE);
+        //latchSlideMotor.setDirection(DcMotor.Direction.REVERSE);
 
           //colorSensor.enableLed(false);
         colorSensorRev.enableLed(false);
@@ -116,7 +116,7 @@ public class RR10515HardwareMap
         FleftMotor.setPower(0);
         BRightMotor.setPower(0);
         BLeftMotor.setPower(0);
-        latchSlideMotor.setPower(0);
+        //latchSlideMotor.setPower(0);
 
         //claw.setPosition(.5);
         //hand.setPosition(1);
@@ -130,7 +130,7 @@ public class RR10515HardwareMap
         BLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         // liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        latchSlideMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //latchSlideMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
