@@ -17,8 +17,12 @@ import org.firstinspires.ftc.robotcore.external.navigation.RelicRecoveryVuMark;
 import org.firstinspires.ftc.robotcore.external.navigation.VuMarkInstanceId;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackable;
+import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackableDefaultListener;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 import com.qualcomm.robotcore.util.Range;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class RR10515Base extends LinearOpMode {
@@ -39,12 +43,14 @@ public abstract class RR10515Base extends LinearOpMode {
     public void goStraight(double speed, double period)
     {
 
-        robot.BLeftMotor.setPower(speed);
-        robot.BRightMotor.setPower(speed);
+        robot.BLeftMotor.setPower(-speed);
+        robot.BRightMotor.setPower(-speed);
+        robot.FrightMotor.setPower(-speed);
+        robot.FleftMotor.setPower(-speed);
 
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < period)) {
-            telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
+          //  telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
             //  telemetry.update();
         }
     }
@@ -160,8 +166,10 @@ public abstract class RR10515Base extends LinearOpMode {
     public void turnRight(double speed, double period) {
 
         //  Spin right x seconds
-        robot.BLeftMotor.setPower(speed);
-        robot.BRightMotor.setPower(-speed);
+        robot.BLeftMotor.setPower(-speed);
+        robot.BRightMotor.setPower(speed);
+        robot.FleftMotor.setPower(-speed);
+        robot.FrightMotor.setPower(speed);
 
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < period)) {
@@ -173,8 +181,10 @@ public abstract class RR10515Base extends LinearOpMode {
     public void turnLeft(double speed, double period) {
 
         //  Spin Left for x seconds
-        robot.BLeftMotor.setPower(-speed);
-        robot.BRightMotor.setPower(speed);
+        robot.BLeftMotor.setPower(speed);
+        robot.BRightMotor.setPower(-speed);
+        robot.FleftMotor.setPower(speed);
+        robot.FrightMotor.setPower(-speed);
 
         runtime.reset();
         while (opModeIsActive() && (runtime.seconds() < period)) {
@@ -294,39 +304,65 @@ public abstract class RR10515Base extends LinearOpMode {
          * for a competition robot, the front camera might be more convenient.
          */
         parameters.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
-        this.vuforia = ClassFactory.createVuforiaLocalizer(parameters);
+        //  Instantiate the Vuforia engine
+        vuforia = ClassFactory.getInstance().createVuforia(parameters);
 
-        /**
-         * Load the data set containing the VuMarks for Relic Recovery. There's only one trackable
-         * in this data set: all three of the VuMarks in the game were created from this one template,
-         * but differ in their instance id information.
-         * @see VuMarkInstanceId
-         */
-        VuforiaTrackables relicTrackables = this.vuforia.loadTrackablesFromAsset("RelicVuMark");
-        VuforiaTrackable relicTemplate = relicTrackables.get(0);
-        relicTemplate.setName("relicVuMarkTemplate"); // can help in debugging; otherwise not necessary
+        // Load the data sets that for the trackable objects. These particular data
+        // sets are stored in the 'assets' part of our application.
+        VuforiaTrackables targetsRoverRuckus = this.vuforia.loadTrackablesFromAsset("RoverRuckus");
+        VuforiaTrackable blueRover = targetsRoverRuckus.get(0);
+        blueRover.setName("Blue-Rover");
+        VuforiaTrackable redFootprint = targetsRoverRuckus.get(1);
+        redFootprint.setName("Red-Footprint");
+        VuforiaTrackable frontCraters = targetsRoverRuckus.get(2);
+        frontCraters.setName("Front-Craters");
+        VuforiaTrackable backSpace = targetsRoverRuckus.get(3);
+        backSpace.setName("Back-Space");
 
-        relicTrackables.activate();
+
+        // For convenience, gather together all the trackable objects in one easily-iterable collection */
+        List<VuforiaTrackable> allTrackables = new ArrayList<VuforiaTrackable>();
+        allTrackables.addAll(targetsRoverRuckus);
+
+        targetsRoverRuckus.activate();
+
+        boolean targetVisible = false;
         int i = 0;
-        RelicRecoveryVuMark vuMark = null;
-        while (i < 2) {
-            i++;
-            telemetry.addData("i", "%s", i);
-            sleep(500);
-            vuMark = RelicRecoveryVuMark.from(relicTemplate);
-            if (vuMark != RelicRecoveryVuMark.UNKNOWN) {
 
-                /* Found an instance of the template. In the actual game, you will probably
-                 * loop until this condition occurs, then move on to act accordingly depending
-                 * on which VuMark was visible. */
-                telemetry.addData("VuMark", "%s visible", vuMark);
-            } else {
-                telemetry.addData("VuMark", "not visible");
+        while (!targetVisible && i < 5) {
+            sleep(1000);
+            for (VuforiaTrackable trackable : allTrackables) {
+                if (((VuforiaTrackableDefaultListener) trackable.getListener()).isVisible()) {
+                    telemetry.addData("Visible Target", trackable.getName());
+                    telemetry.update();
+                    targetVisible = true;
+                    return trackable.getName();
+                }
             }
-
-            telemetry.update();
+            i++;
         }
-        return vuMark.toString();
+
+        if (!targetVisible)
+            telemetry.addData("visible target", "not visible");
+
+        telemetry.update();
+    return "test";
+    }
+    public boolean moveVuforia()
+    {
+        boolean isCaptured= false;
+        while(!isCaptured)
+        {
+            moveRSideEncoder(200, .2);
+            String x = vuforiaCapture();
+            if (x.equals("Red-Footprint"))
+            {
+                isCaptured = true;
+            }
+            sleep(500);
+        }
+        stopRobot();
+        return isCaptured;
     }
 
     public void initialize() {
@@ -410,20 +446,23 @@ public abstract class RR10515Base extends LinearOpMode {
         telemetry.addData("heading", angles.firstAngle);
         telemetry.addData("firstAngle", angles.firstAngle);
         telemetry.update();
-        // sleep(2000);
+         sleep(2000);
 
         while (angles.firstAngle > angleDegrees || angles.firstAngle < -angleDegrees) {
             if (angles.firstAngle > angleDegrees) {
-                turnRight(0.5, 0.1);
+                turnRight(0.2, 0.1);
 
             } else if (angles.firstAngle < -angleDegrees) {
-                turnLeft(0.5, 0.1);
+                turnLeft(0.2, 0.1);
             }
 
             stopRobot();
-            sleep(100);
+            sleep(200);
             angles = robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
 
+            telemetry.addData("firstAngle", angles.firstAngle);
+            telemetry.update();
+            sleep(1000);
             if (angles.firstAngle > angleDegrees - 5 && angles.firstAngle < angleDegrees + 5) {
                 telemetry.addData("firstAngle", angles.firstAngle);
                 telemetry.update();
@@ -438,7 +477,7 @@ public abstract class RR10515Base extends LinearOpMode {
                 telemetry.addData("heading", angles.firstAngle);
                 telemetry.addData("firstAngle", angles.firstAngle);
                 telemetry.update();
-                // sleep(1000);
+                sleep(1000);
             }
         }}
 
@@ -454,17 +493,20 @@ public abstract class RR10515Base extends LinearOpMode {
 
         while (angles.firstAngle < angleDegrees || angles.firstAngle > -angleDegrees) {
             if (angles.firstAngle < angleDegrees) {
-                turnLeft(0.5, 0.1);
+                turnLeft(0.2, 0.1);
 
             } else if (angles.firstAngle > -angleDegrees) {
-                turnRight(0.5, 0.1);
+                turnRight(0.2, 0.1);
             }
 
             stopRobot();
-            sleep(100);
+            sleep(200);
             angles = robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES);
 
-            if (angles.firstAngle < angleDegrees - 5 && angles.firstAngle > angleDegrees + 5) {
+            telemetry.addData("firstAngle", angles.firstAngle);
+            telemetry.update();
+            sleep(1000);
+            if (angles.firstAngle > angleDegrees - 5 && angles.firstAngle < angleDegrees + 5) {
                 if(angles.firstAngle > angleDegrees -5 && angles.firstAngle < angleDegrees +5){
                     telemetry.addData("firstAngle", angles.firstAngle);
                     telemetry.update();
@@ -475,7 +517,7 @@ public abstract class RR10515Base extends LinearOpMode {
                 telemetry.addData("heading", angles.firstAngle);
                 telemetry.addData("firstAngle", angles.firstAngle);
                 telemetry.update();
-                //  sleep(1000);
+                  sleep(1000);
             }
         }
 
