@@ -84,7 +84,6 @@
         android:name="org.firstinspires.ftc.robotcore.internal.system.RobotApplication"
         android:allowBackup="true"
         android:debuggable="true"
-        android:exported="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -333,8 +332,6 @@
         <service
             android:name="org.firstinspires.ftc.ftccommon.internal.FtcRobotControllerWatchdogService"
             android:enabled="true" />
-
-        <uses-library android:name="android.test.runner" />
 
         <activity
             android:name="org.firstinspires.inspection.DsInspectionActivity"

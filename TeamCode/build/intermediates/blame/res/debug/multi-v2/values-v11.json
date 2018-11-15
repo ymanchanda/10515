@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/ronitmanchanda/Documents/GitHub/10515/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v11/values-v11.xml",
+            "outputFile": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "/Users/ronitmanchanda/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/e8f81885806cd1c2597ed2c83ca682a2/res/values-v11/values-v11.xml",
+                    "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\RobotCore-release.aar\\7070256920f9af0ac251530170cf7316\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

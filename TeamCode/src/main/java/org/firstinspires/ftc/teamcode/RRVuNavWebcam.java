@@ -92,7 +92,7 @@ import java.util.Locale;
  * is explained below.
  */
 
-@TeleOp(name="RR: Vuforia Nav Webcam", group ="Team10515")
+@TeleOp(name="RR: Webcam 1", group ="Team10515")
 public class RRVuNavWebcam extends LinearOpMode {
 
     public static final String TAG = "Vuforia Navigation Sample";
@@ -146,12 +146,13 @@ public class RRVuNavWebcam extends LinearOpMode {
          * Once you've obtained a license key, copy the string from the Vuforia web site
          * and paste it in to your code on the next line, between the double quotes.
          */
-        parameters.vuforiaLicenseKey = "AeYAHIn/////AAAAGfVr1aFjUEHlh1uCvvWMJFtG8Y1D0YvNXpfCJTXkpgrNedm+jaqR+2trR9dGNzyeuHUMqo42P7DuJIp1IPDBDF5oepx6kw121V3vAc3sR5F43oix5brWapqdLcvFYcdFmWqg3AvIy436p1bkMhhJgcVEzXzIususTncxlVaHDDohnS9zN38qFcbFeKWH8cLG8lbt+2sNqoGJgOQ1/Oq6wEf3ceIS1x2BsguyUtkPLG0OQALkjbktRMdfLHe34ldDuCddP1ekNgkvwauoxOJqYKJKZX15h3VZfRtnp4mArn6Bxx8vWITXm690wfsdAio1LrRGm+NBovMapDxs9IKJuiH53nEoYrvat8IGG9IhMp67";
+        parameters.vuforiaLicenseKey = "AVVrDYb/////AAABmT0TlZXDYE3gpf/zMjQrOgACsYT0LcTPCkhjAmq0XO3HT0RdGx2eP+Lwumhftz4e/g28CBGg1HmaFfy5kW9ioO4UGDeokDyxRfqWjNQwKG3BanmjCXxMxACaJ7iom5J3o4ylWNmuiyxsK8n1fFf2dVsTUsvUI7aRxqTahnIqqRJRsGmxld18eHy/ZhHfIjOyifi4svZUQiput21/jAloTx0sTnnrpR1Y/xGOz+68sGuXIgLZHpAQSoZnXiczGKdahGXOg3n6dXlQPIiASE1kHp253CTwO40l1HHN083m4wYjP4FCl/9TH3tb0Wj/Ccmlhfz2omhnZQKOBe7RsIxRk+PuEGkIe5hCs/lV9+yf9iBm";
 
         /**
          * We also indicate which camera on the RC we wish to use.
          */
         parameters.cameraName = webcamName;
+        parameters.useExtendedTracking = true;
 
         /**
          * Instantiate the Vuforia engine
@@ -395,6 +396,9 @@ public class RRVuNavWebcam extends LinearOpMode {
 
             if (gamepad1.a && !buttonPressed) {
                 captureFrameToFile();
+                telemetry.addData("a button", "");
+                telemetry.update();
+                sleep(1000);
                 }
             buttonPressed = gamepad1.a;
 

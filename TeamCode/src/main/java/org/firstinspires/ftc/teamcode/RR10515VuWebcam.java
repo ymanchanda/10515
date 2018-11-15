@@ -110,7 +110,8 @@ import java.util.Locale;
  * is explained below.
  */
 
-@TeleOp(name="RR AutoVuWebcam", group ="Team10515")
+@TeleOp(name="RR Old AutoVuWebcam", group ="Team10515")
+@Disabled
 public class RR10515VuWebcam extends LinearOpMode {
 
     /*
@@ -197,10 +198,10 @@ public class RR10515VuWebcam extends LinearOpMode {
         blueRover.setName("Blue-Rover");
         VuforiaTrackable redFootprint = targetsRoverRuckus.get(1);
         redFootprint.setName("Red-Footprint");
-        VuforiaTrackable frontCraters = targetsRoverRuckus.get(2);
-        frontCraters.setName("Front-Craters");
-        VuforiaTrackable backSpace = targetsRoverRuckus.get(3);
-        backSpace.setName("Back-Space");
+        //VuforiaTrackable frontCraters = targetsRoverRuckus.get(2);
+        //frontCraters.setName("Front-Craters");
+        //VuforiaTrackable backSpace = targetsRoverRuckus.get(3);
+        //backSpace.setName("Back-Space");
 
         // For convenience, gather together all the trackable objects in one easily-iterable collection */
         List<VuforiaTrackable> allTrackables = new ArrayList<VuforiaTrackable>();
@@ -255,10 +256,10 @@ public class RR10515VuWebcam extends LinearOpMode {
          *   and facing inwards to the center of the field.
          * - Then, we translate it along the negative X axis to the front perimeter wall.
          */
-        OpenGLMatrix frontCratersLocationOnField = OpenGLMatrix
-                .translation(-mmFTCFieldWidth, 0, mmTargetHeight)
-                .multiplied(Orientation.getRotationMatrix(EXTRINSIC, XYZ, DEGREES, 90, 0 , 90));
-        frontCraters.setLocation(frontCratersLocationOnField);
+        //OpenGLMatrix frontCratersLocationOnField = OpenGLMatrix
+        //        .translation(-mmFTCFieldWidth, 0, mmTargetHeight)
+        //        .multiplied(Orientation.getRotationMatrix(EXTRINSIC, XYZ, DEGREES, 90, 0 , 90));
+        //frontCraters.setLocation(frontCratersLocationOnField);
 
         /**
          * To place the BackSpace target in the middle of the back perimeter wall:
