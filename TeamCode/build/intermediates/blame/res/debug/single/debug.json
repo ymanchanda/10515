@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\FtcRobotController\\build\\intermediates\\packaged_res\\debug\\xml\\device_filter.xml"
     },
     {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\raw_simple_vertex_shader.glsl.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\RobotCore-release.aar\\7070256920f9af0ac251530170cf7316\\res\\raw\\simple_vertex_shader.glsl"
-    },
-    {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\raw_nxtstartupsound.wav.flat",
         "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\raw\\nxtstartupsound.wav"
+    },
+    {
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\raw_simple_vertex_shader.glsl.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\RobotCore-release.aar\\7070256920f9af0ac251530170cf7316\\res\\raw\\simple_vertex_shader.glsl"
     },
     {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_port_attached_row.xml.flat",
@@ -80,12 +80,12 @@
         "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\activity_ftc_lynx_fw_update.xml"
     },
     {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_template_info.xml.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\template_info.xml"
-    },
-    {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\menu_ftc_robot_controller.xml.flat",
         "source": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\FtcRobotController\\build\\intermediates\\packaged_res\\debug\\menu\\ftc_robot_controller.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_template_info.xml.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\template_info.xml"
     },
     {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_info_button.xml.flat",
@@ -100,36 +100,36 @@
         "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\i2cs.xml"
     },
     {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_pwms.xml.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\pwms.xml"
-    },
-    {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_activity_program_and_manage.xml.flat",
         "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\activity_program_and_manage.xml"
     },
     {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\xml_maxmodules.xml.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\xml\\maxmodules.xml"
-    },
-    {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_digital_device.xml.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\digital_device.xml"
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_pwms.xml.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\pwms.xml"
     },
     {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\xml_app_settings.xml.flat",
         "source": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\FtcRobotController\\build\\intermediates\\packaged_res\\debug\\xml\\app_settings.xml"
     },
     {
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_digital_device.xml.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\digital_device.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\xml_maxmodules.xml.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\xml\\maxmodules.xml"
+    },
+    {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\raw_readme.md.flat",
         "source": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\src\\main\\res\\raw\\readme.md"
     },
     {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_color_list_preference_line_item.xml.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\RobotCore-release.aar\\7070256920f9af0ac251530170cf7316\\res\\layout\\color_list_preference_line_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_lynx_module_configure_address_spin_item.xml.flat",
         "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\layout\\lynx_module_configure_address_spin_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_color_list_preference_line_item.xml.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\RobotCore-release.aar\\7070256920f9af0ac251530170cf7316\\res\\layout\\color_list_preference_line_item.xml"
     },
     {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_ic_launcher.png.flat",
@@ -156,12 +156,12 @@
         "source": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\FtcRobotController\\build\\intermediates\\packaged_res\\debug\\drawable-xxhdpi-v4\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\xml_ftc_about_activity_rc.xml.flat",
-        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\xml\\ftc_about_activity_rc.xml"
-    },
-    {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\raw_gold.wav.flat",
         "source": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\FtcRobotController\\build\\intermediates\\packaged_res\\debug\\raw\\gold.wav"
+    },
+    {
+        "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\xml_ftc_about_activity_rc.xml.flat",
+        "source": "C:\\Users\\Yogi\\.gradle\\caches\\transforms-1\\files-1.1\\FtcCommon-release.aar\\4be0a0049eb2172c0dcc1babd40c401c\\res\\xml\\ftc_about_activity_rc.xml"
     },
     {
         "merged": "C:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\res\\merged\\debug\\layout_matrix_devices.xml.flat",
