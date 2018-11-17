@@ -248,6 +248,10 @@ import java.util.Locale;
             catch (Exception ex){
                 pos = "Error";
                 telemetry.addData("Don't know Gold Mineral Position", "Error");
+
+                if (tfod != null) {
+                    tfod.shutdown();
+                }
             }
 
             telemetry.update();

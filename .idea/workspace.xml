@@ -12,188 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5acecf-068c-4e44-aa5d-8feaa1b9a169" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/ConceptTFOD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/extractedTypedefs/debug/typedefs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/packaged-classes/debug/classes.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/transforms/mergeJavaRes/debug/0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FtcRobotController/build/outputs/aar/FtcRobotController-debug.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$dimen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/blocks/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/ftcresearch/tfod/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/ftcresearch/tfod/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/google/ftcresearch/tfod/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/WirelessP2p/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/WirelessP2p/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/WirelessP2p/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/WirelessP2p/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$dimen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftccommon/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$dimen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/ftcrobotcontroller/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/hardware/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/com/qualcomm/robotcore/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/BuildConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$dimen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRAutoTest1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRVuNavWebcam$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/RRVuNavWebcam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/Team10515Base.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/Team10515HW.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/Team10515HWDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/Team10515TeleopFinal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$array.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$attr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$dimen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$drawable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$id.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$layout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$raw.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$string.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$style.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$styleable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R$xml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/inspection/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/tensorflow/lite/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/debug-mergeJniLibs/merge-state" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/manifests/full/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/res/debug/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/res/debug/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/10.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/12.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/13.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexBuilder/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dexMerger/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/externalLibsDexMerger/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJavaRes/debug/0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/arm64-v8a/libimage_utils.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/arm64-v8a/libobject_tracking.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/arm64-v8a/libtensorflowlite_jni.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libRobotCore.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libVuforia.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libc++_shared.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libimage_utils.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libobject_tracking.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libtensorflowlite_jni.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86/libimage_utils.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86/libobject_tracking.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86/libtensorflowlite_jni.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86_64/libimage_utils.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86_64/libobject_tracking.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86_64/libtensorflowlite_jni.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/outputs/apk/debug/TeamCode-debug.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/build/outputs/apk/debug/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/RRTFodWebcam.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/RRTFodWebcam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RRAutoTest1.java" beforeDir="false" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RRAutoTest1.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -241,8 +59,8 @@
       <file leaf-file-name="RRAutoTest1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RRAutoTest1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+            <state relative-caret-position="279">
+              <caret line="224" selection-start-line="224" selection-end-line="224" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#12006#12483#0" expanded="true" />
@@ -3806,8 +3624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/RRAutoTest1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="155" column="13" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+        <state relative-caret-position="279">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#12006#12483#0" expanded="true" />
