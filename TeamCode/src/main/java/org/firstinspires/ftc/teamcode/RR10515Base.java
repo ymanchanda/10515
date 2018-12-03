@@ -34,7 +34,10 @@ public abstract class RR10515Base extends LinearOpMode {
     //public static final String TAG = "Vuforia VuMark Sample";
     //public static final double ARM_DOWN_POWER  = 0.3;
     //public static final double ARM_UP_POWER  = -0.3;
+public RR10515Base()
+{
 
+}
 
     OpenGLMatrix lastLocation = null;
 
@@ -193,7 +196,7 @@ public abstract class RR10515Base extends LinearOpMode {
         }
 
     }
-    public void moveRSideEncoder(int distance,double power)
+    public void moveSideEncoder(int distance,double power)
     {
         robot.FrightMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.FleftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -233,6 +236,7 @@ public abstract class RR10515Base extends LinearOpMode {
     robot.BRightMotor.setTargetPosition(in4+rotations);
 */
     }
+
         public void goRightSide(double speed)
         {
             robot.BLeftMotor.setPower(speed);
@@ -353,7 +357,7 @@ public abstract class RR10515Base extends LinearOpMode {
         boolean isCaptured= false;
         while(!isCaptured)
         {
-            moveRSideEncoder(200, .2);
+            moveSideEncoder(200, .2);
             String x = vuforiaCapture();
             if (x.equals("Red-Footprint"))
             {
@@ -384,6 +388,7 @@ public abstract class RR10515Base extends LinearOpMode {
 
     }
 
+/*
     public String colorSenseRev() {
 
         String color = "NOT READ";
@@ -409,7 +414,7 @@ public abstract class RR10515Base extends LinearOpMode {
         }
         return color;
     }
-
+*/
      /* public String colorSense() {
           robot.colorSensor.enableLed(true);
 

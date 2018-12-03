@@ -31,31 +31,34 @@ public class RR10515HardwareMap
     public DcMotor  BRightMotor = null;
     public DcMotor  BLeftMotor    = null;
     public DcMotor  latchSlideMotor    = null;
+    public  DcMotor liftMotor = null;
+    public DcMotor armMotor = null;
 
-    // public Servo    hand   = null;
-    //public Servo claw = null;
-    // public Servo    relicHold = null;
+     public Servo   spinner   = null;
+    public Servo claw = null;
+    public Servo    depositor = null;
     // public Servo    relicArm = null;
 
      //public ColorSensor colorSensor     = null;
-    public ColorSensor colorSensorRev = null;
+    //public ColorSensor colorSensorRev = null;
     public BNO055IMU imu = null;
-    //  public ModernRoboticsI2cRangeSensor rangeSensor = null;
+    public ModernRoboticsI2cRangeSensor rangeSensor = null;
 
     static final String FRIGHT_MOTOR = "FrontRight";
     static final String  FLEFT_MOTOR = "FrontLeft";
     static final String  BRIGHT_MOTOR = "BackRight";
     static final String  BLEFT_MOTOR = "BackLeft";
-    //static final String  LATCH_SLIDE_MOTOR = "LatchSlideMotor";
-    //static final String  Claw = "Claw";
-    //static final String  Hand = "Hand";
-    //  static final String  RELIC_HOLD = "RelicHold";
-    //  static final String  RELIC_ARM = "RelicArm";
+    static final String  LATCH_SLIDE_MOTOR = "LatchSlideMotor";
+    static final String  CLAW = "Claw";
+    static final String  SPINNER = "Spinner";
+    static final String   DEPOSITOR = "Depositor";
+    static final String  LIFT_MOTOR = "LiftMotor";
+    static final String  ARM_MOTOR = "ArmMotor";
 
    // static final String  COLOR_SENSOR = "Color";
-    static final String  COLOR_SENSORREV = "RevColor";
+ //   static final String  COLOR_SENSORREV = "RevColor";
     static final String  IMU_SENSOR = "imu";
-    //static final String  RANGE_SENSOR = "Range";
+    static final String  RANGE_SENSOR = "Range";
 
     public static final double LIFT_UP_POWER    =  .5 ;
     public static final double LIFT_DOWN_POWER  = -0.6;
@@ -83,32 +86,38 @@ public class RR10515HardwareMap
         FrightMotor  = hwMap.dcMotor.get(FRIGHT_MOTOR);
         BLeftMotor    = hwMap.dcMotor.get (BLEFT_MOTOR);
         BRightMotor   = hwMap.dcMotor.get(BRIGHT_MOTOR);
-        //latchSlideMotor = hwMap.dcMotor.get(LATCH_SLIDE_MOTOR);
+        latchSlideMotor = hwMap.dcMotor.get(LATCH_SLIDE_MOTOR);
+        liftMotor = hwMap.dcMotor.get(LIFT_MOTOR);
+        armMotor = hwMap.dcMotor.get(ARM_MOTOR);
 
-        //claw   = hwMap.servo.get(Claw);
-        //   hand   = hwMap.servo.get(Hand);
-        //   relicArm = hwMap.servo.get(RELIC_ARM);
-        //   relicHold = hwMap.servo.get(RELIC_HOLD);
+        claw   = hwMap.servo.get(CLAW);
+        spinner   = hwMap.servo.get(SPINNER);
+        depositor = hwMap.servo.get(DEPOSITOR);
+
+
 
       //colorSensor = hwMap.colorSensor.get(COLOR_SENSOR);
-        colorSensorRev = hwMap.get(ColorSensor.class, COLOR_SENSORREV);
-        //  rangeSensor = hwMap.get(ModernRoboticsI2cRangeSensor.class, RANGE_SENSOR);
+   //     colorSensorRev = hwMap.get(ColorSensor.class, COLOR_SENSORREV);
+        rangeSensor = hwMap.get(ModernRoboticsI2cRangeSensor.class, RANGE_SENSOR);
 
 
         FleftMotor.setDirection((DcMotor.Direction.REVERSE));
         FrightMotor.setDirection(DcMotor.Direction.FORWARD);
         BLeftMotor.setDirection(DcMotor.Direction.REVERSE);
         BRightMotor.setDirection((DcMotor.Direction.FORWARD));
-        //latchSlideMotor.setDirection(DcMotor.Direction.REVERSE);
-
-          //colorSensor.enableLed(false);
-        colorSensorRev.enableLed(false);
-        // rangeSensor.enableLed(false);
+        latchSlideMotor.setDirection(DcMotor.Direction.REVERSE);
+        armMotor.setDirection(DcMotor.Direction.REVERSE);
+        liftMotor.setDirection(DcMotor.Direction.REVERSE);
 
 
-        //claw.setDirection(Servo.Direction.REVERSE);
-        // hand.setDirection(Servo.Direction.REVERSE);
-        //relicHold.setDirection(Servo.Direction.REVERSE);
+        //colorSensor.enableLed(false);
+     //   colorSensorRev.enableLed(false);
+        rangeSensor.enableLed(false);
+
+
+        claw.setDirection(Servo.Direction.REVERSE);
+         spinner.setDirection(Servo.Direction.REVERSE);
+        depositor.setDirection(Servo.Direction.REVERSE);
         //relicArm.setDirection(Servo.Direction.REVERSE);
 
         // Set all motors to zero power
@@ -116,11 +125,13 @@ public class RR10515HardwareMap
         FleftMotor.setPower(0);
         BRightMotor.setPower(0);
         BLeftMotor.setPower(0);
-        //latchSlideMotor.setPower(0);
+        latchSlideMotor.setPower(0);
+        liftMotor.setPower(0);
+        armMotor.setPower(0);
 
-        //claw.setPosition(.5);
-        //hand.setPosition(1);
-        //relicHold.setPosition(0);
+        claw.setPosition(0);
+        spinner.setPosition(0);
+        depositor.setPosition(0);
         //relicArm.setPosition (0);
 
         // Set all motors to run without encoders.
@@ -129,8 +140,9 @@ public class RR10515HardwareMap
         FrightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         BRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        // liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        //latchSlideMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        latchSlideMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        armMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.angleUnit           = BNO055IMU.AngleUnit.DEGREES;
