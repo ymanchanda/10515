@@ -39,13 +39,13 @@ public class BOT2HMap
 
     public CRServo   spinner   = null;
     public Servo claw = null;
-    public CRServo    depositor = null;
+    public Servo    depositor = null;
     // public Servo    relicArm = null;
 
     //public ColorSensor colorSensor     = null;
     //public ColorSensor colorSensorRev = null;
     public BNO055IMU imu = null;
-    public ModernRoboticsI2cRangeSensor rangeSensor = null;
+    public Rev2mDistanceSensor rangeSensor = null;
 
     static final String FRIGHT_MOTOR   = "FrontRight";
     static final String  FLEFT_MOTOR   = "FrontLeft";
@@ -65,7 +65,7 @@ public class BOT2HMap
 
     public static final double LIFT_UP_POWER    =  .5 ;
     public static final double LIFT_DOWN_POWER  = -0.6;
-    public static final double SLIDE_OUT_POWER    =  .5 ;
+    public static final double SLIDE_OUT_POWER  =  .5;
     public static final double SLIDE_IN_POWER  = -.3;
 
 
@@ -95,26 +95,26 @@ public class BOT2HMap
 
         claw   = hwMap.servo.get(CLAW);
         spinner   = hwMap.crservo.get(SPINNER);
-        depositor = hwMap.crservo.get(DEPOSITOR);
+        depositor = hwMap.servo.get(DEPOSITOR);
 
         //colorSensor = hwMap.colorSensor.get(COLOR_SENSOR);
         //colorSensorRev = hwMap.get(ColorSensor.class, COLOR_SENSORREV);
-        rangeSensor = hwMap.get(ModernRoboticsI2cRangeSensor.class, RANGE_SENSOR);
+        rangeSensor = hwMap.get(Rev2mDistanceSensor.class, RANGE_SENSOR);
 
-        FleftMotor.setDirection((DcMotor.Direction.FORWARD));
+        FleftMotor.setDirection(DcMotor.Direction.FORWARD);
         FrightMotor.setDirection(DcMotor.Direction.REVERSE);
         BLeftMotor.setDirection(DcMotor.Direction.FORWARD);
-        BRightMotor.setDirection((DcMotor.Direction.REVERSE));
+        BRightMotor.setDirection(DcMotor.Direction.REVERSE);
         SliderMotor.setDirection(DcMotor.Direction.REVERSE);
         liftMotor.setDirection(DcMotor.Direction.REVERSE);
         armMotor.setDirection(DcMotor.Direction.REVERSE);
 
         // Set all motors to zero power
-        rangeSensor.enableLed(false);
+        //rangeSensor.
 
         claw.setDirection(Servo.Direction.REVERSE);
         spinner.setDirection(CRServo.Direction.REVERSE);
-        depositor.setDirection(CRServo.Direction.REVERSE);
+        depositor.setDirection(Servo.Direction.REVERSE);
         //relicArm.setDirection(Servo.Direction.REVERSE);
 
         // Set all motors to zero power
@@ -128,7 +128,7 @@ public class BOT2HMap
 
         claw.setPosition(0);
         spinner.setPower(0);
-        depositor.setPower(0);
+        //depositor.setPosition(0.5);
         //relicArm.setPosition (0);
 
         // Set all motors to run without encoders.

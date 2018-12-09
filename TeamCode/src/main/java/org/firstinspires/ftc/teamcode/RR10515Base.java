@@ -68,6 +68,27 @@ public RR10515Base()
         runtime.reset();
 
     }
+    public void unLatch(double speed,double time)
+    {
+        robot.liftMotor.setPower(speed);
+        runtime.reset();
+        while (opModeIsActive() && (runtime.seconds() < time))
+        {
+            telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
+            //  telemetry.update();
+        }
+    }
+    public void parkCrater(double position, double time)
+    {
+        robot.depositor.setPosition(position);
+        while (opModeIsActive() && (runtime.seconds() < time))
+        {
+            telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
+            //  telemetry.update();
+        }
+    }
+
+
    /* public void driveStraightDistance(int tenthsOfIn, int masterPower)
     {
         int tickGoal = (42 * tenthsOfIn) / 10;

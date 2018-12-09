@@ -75,6 +75,7 @@ import java.util.Locale;
 
             // Wait for the game to start (driver presses PLAY)
             waitForStart();
+            unLatch(1.0,1.1);
 
             String position = getGoldPosition();
             sleep(1000);
@@ -257,6 +258,8 @@ import java.util.Locale;
            repositionBotAntiClock(45);
            //moveSideEncoder(550,0.3);
            moveStraightEncoder(4700,.3);
+           parkCrater(1.0,.5);
+
            //sweep mineral in
         }
         public void removeLeft()
@@ -269,6 +272,7 @@ import java.util.Locale;
             repositionBotAntiClock(45.0);
             moveSideEncoder(650,0.3);
             moveStraightEncoder(4700,0.3);
+            parkCrater(1.0,.5);
 
             //sweep mineral in and then get ready to go in to depot
 
@@ -283,6 +287,7 @@ import java.util.Locale;
             repositionBotAntiClock(45.0);
             //moveSideEncoder(550,.3);
             moveStraightEncoder(4600,0.3);
+            parkCrater(1.0,.5 );
             //sweep mineral in and then get ready to go in to depot
 
         }
