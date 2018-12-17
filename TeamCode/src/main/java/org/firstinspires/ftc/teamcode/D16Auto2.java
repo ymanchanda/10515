@@ -47,8 +47,8 @@ import java.util.Locale;
 
 
 /* This program will go straight  hit the capball  and park the bot at the center vertex  */
-@Autonomous(name="Depot Facing 1", group="Ttyteam10515")
-public class D16Auto1 extends RR10515Base
+@Autonomous(name="Depot Facing Secondary", group="Ttyteam10515")
+public class D16Auto2 extends RR10515Base
 {
     private static final String TFOD_MODEL_ASSET = "RoverRuckus.tflite";
     private static final String LABEL_GOLD_MINERAL = "Gold Mineral";
@@ -77,13 +77,13 @@ public class D16Auto1 extends RR10515Base
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        unLatch(1.0,5.5);
+        unLatch(1.0,5.5 );
         stopRobot();
-        sleep(500);
-        //moveStraightEncoder(-60,0.2);
+        sleep(1000);
+        moveStraightEncoder(-60,0.2);
         //sleep(2000);
 
-        moveSideEncoder(-255,.2);
+        moveSideEncoder(-275,.2);
         String position = getGoldPosition();
         sleep(200);
         moveStraightEncoder(-495,.2);
@@ -99,7 +99,7 @@ public class D16Auto1 extends RR10515Base
             removeRight();
         }
         else {
-          removeCenter();
+           removeCenter();
         }
         // Start the logging of measured acceleration
         stopRobot();
@@ -110,10 +110,11 @@ public class D16Auto1 extends RR10515Base
         moveSideEncoder(275,.2);
         moveStraightEncoder(-1800,0.2);
         repositionBotAntiClock(45);
-        moveStraightEncoder(-200,0.2);
+        moveStraightEncoder(-225,0.2);
+        sleep(200);
         markerDrop();
-        moveStraightEncoder(600,0.2);
-        moveSideEncoder(300,0.2);
+        moveStraightEncoder(850,0.2);
+        moveSideEncoder(350,0.2);
         goToCrater();
         //sweep mineral in
     }
@@ -139,20 +140,22 @@ public class D16Auto1 extends RR10515Base
         moveStraightEncoder(-1049,0.2);
         sleep(500);
         repositionBotAntiClock(45.0);
-        moveStraightEncoder(-1100,.2);
+        moveStraightEncoder(-1300,.2);
         markerDrop();
-        moveStraightEncoder(600,0.2);
+        moveStraightEncoder(800,0.2);
         moveSideEncoder(200,.2);
         goToCrater();
         //sweep mineral in and then get ready to go in to depot
 
     }
-  private void goToCrater()
+    private void goToCrater()
     {
-        moveStraightEncoder(1700,.2);
-        moveSideEncoder(230,.2);
-        moveStraightEncoder(800,.2);
-        repositionBotAntiClock(65);
+        moveStraightEncoder(1600,.2);
+        //moveSideEncoder(200,.2);
+        repositionBotAntiClock(90);
+        moveSideEncoder(-3700,.2);
+        repositionBotAntiClock(110);
+        moveStraightEncoder(800,0.2);
         parkCrater(0,.5);
     }
 
@@ -183,7 +186,7 @@ public class D16Auto1 extends RR10515Base
                 telemetry.addData("Info!", "TFOD Active");
                 telemetry.update();
 
-                sleep(1000);
+                sleep(500);
 
                 // getUpdatedRecognitions() will return null if no new information is available since
                 // the last time that call was made.

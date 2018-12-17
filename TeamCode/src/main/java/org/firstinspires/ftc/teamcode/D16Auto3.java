@@ -2,25 +2,15 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cGyro;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.GyroSensor;
-import com.qualcomm.robotcore.hardware.IntegratingGyroscope;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.robotcontroller.external.samples.ConceptVuforiaNavigation;
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.Func;
-import org.firstinspires.ftc.robotcore.external.hardware.camera.WebcamName;
-import org.firstinspires.ftc.robotcore.external.matrices.OpenGLMatrix;
-import org.firstinspires.ftc.robotcore.external.matrices.VectorF;
+import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
-import org.firstinspires.ftc.robotcore.external.navigation.RelicRecoveryVuMark;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection;
 import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
@@ -28,27 +18,11 @@ import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
 
 import java.util.List;
 import java.util.Locale;
-import com.qualcomm.hardware.bosch.BNO055IMU;
-import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-
-import org.firstinspires.ftc.robotcore.external.Func;
-import org.firstinspires.ftc.robotcore.external.navigation.Acceleration;
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
-import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
-import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
-import org.firstinspires.ftc.robotcore.external.navigation.Position;
-import org.firstinspires.ftc.robotcore.external.navigation.Velocity;
-
-import java.util.Locale;
 
 
 /* This program will go straight  hit the capball  and park the bot at the center vertex  */
-@Autonomous(name="Depot Facing 1", group="Ttyteam10515")
-public class D16Auto1 extends RR10515Base
+@Autonomous(name="Non Depot Facing", group="Ttyteam10515")
+public class D16Auto3 extends RR10515Base
 {
     private static final String TFOD_MODEL_ASSET = "RoverRuckus.tflite";
     private static final String LABEL_GOLD_MINERAL = "Gold Mineral";
@@ -67,9 +41,6 @@ public class D16Auto1 extends RR10515Base
     public void runOpMode() {
 
         robot.init(hardwareMap);
-        //calibrateGyro();
-        //sleep(2000);
-
         // Send telemetry message to signify robotrt waiting;
         telemetry.addData("Status", "Ready to run");    //
         telemetry.update();
@@ -77,13 +48,13 @@ public class D16Auto1 extends RR10515Base
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        unLatch(1.0,5.5);
+        unLatch(1.0,5.5 );
         stopRobot();
         sleep(500);
-        //moveStraightEncoder(-60,0.2);
+        moveStraightEncoder(-60,0.2);
         //sleep(2000);
 
-        moveSideEncoder(-255,.2);
+        moveSideEncoder(-275,.2);
         String position = getGoldPosition();
         sleep(200);
         moveStraightEncoder(-495,.2);
@@ -99,7 +70,7 @@ public class D16Auto1 extends RR10515Base
             removeRight();
         }
         else {
-          removeCenter();
+           removeLeft();
         }
         // Start the logging of measured acceleration
         stopRobot();
@@ -108,27 +79,18 @@ public class D16Auto1 extends RR10515Base
     public void removeCenter()
     {
         moveSideEncoder(275,.2);
-        moveStraightEncoder(-1800,0.2);
-        repositionBotAntiClock(45);
-        moveStraightEncoder(-200,0.2);
-        markerDrop();
-        moveStraightEncoder(600,0.2);
-        moveSideEncoder(300,0.2);
-        goToCrater();
+        moveStraightEncoder(-700,0.2);
+        //moveStraightEncoder(350,0.2);
+       // moveSideEncoder(1050,0.2);
+        //goToCrater();
         //sweep mineral in
     }
     public void removeLeft()
     {
         moveSideEncoder(-495,0.2);
-        //repositionBot(20.0);
-        //sleep(2000);
-        moveStraightEncoder(-1450,0.2);
-        repositionBotAntiClock(45.0);
-        moveSideEncoder(800,0.2);
-        moveStraightEncoder(-100,0.2);
-        markerDrop();
-        moveStraightEncoder(800,0.2);
-        moveSideEncoder(300,0.2);
+        moveStraightEncoder(-400,0.2);
+        moveStraightEncoder(350,0.2);
+        moveSideEncoder(2250,0.2);
         goToCrater();
         //sweep mineral in and then get ready to go in to depot
 
@@ -136,24 +98,20 @@ public class D16Auto1 extends RR10515Base
     public void removeRight()
     {
         moveSideEncoder(949,0.2);
-        moveStraightEncoder(-1049,0.2);
-        sleep(500);
-        repositionBotAntiClock(45.0);
-        moveStraightEncoder(-1100,.2);
-        markerDrop();
-        moveStraightEncoder(600,0.2);
-        moveSideEncoder(200,.2);
-        goToCrater();
+        moveStraightEncoder(-600,0.2);
+        //moveStraightEncoder(350,.2);
+        //moveSideEncoder(400,.2);
+        //goToCrater();
         //sweep mineral in and then get ready to go in to depot
 
     }
-  private void goToCrater()
+    private void goToCrater()
     {
-        moveStraightEncoder(1700,.2);
-        moveSideEncoder(230,.2);
-        moveStraightEncoder(800,.2);
-        repositionBotAntiClock(65);
+        repositionBotAntiClock(15);
+        moveStraightEncoder(-800,0.2);
         parkCrater(0,.5);
+        armOut(1.0,1.1);
+        //robot.armMotor.setPower();
     }
 
 
@@ -180,10 +138,10 @@ public class D16Auto1 extends RR10515Base
             sleep(500);
             if (tfod != null) {
                 tfod.activate();
-                telemetry.addData("Info!", "TFOD Active");
-                telemetry.update();
+             //   telemetry.addData("Info!", "TFOD Active");
+               // telemetry.update();
 
-                sleep(1000);
+                sleep(500);
 
                 // getUpdatedRecognitions() will return null if no new information is available since
                 // the last time that call was made.

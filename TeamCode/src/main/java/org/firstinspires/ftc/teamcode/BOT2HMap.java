@@ -126,7 +126,7 @@ public class BOT2HMap
         liftMotor.setPower(0);
         armMotor.setPower(0);
 
-        claw.setPosition(0);
+        //claw.setPosition(0);
         spinner.setPower(0);
         //depositor.setPosition(0.5);
         //relicArm.setPosition (0);

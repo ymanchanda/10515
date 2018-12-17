@@ -28,7 +28,7 @@ import java.util.List;
 public abstract class RR10515Base extends LinearOpMode {
 
     /* Declare OpMode members. */
-    RR10515HardwareMap robot = new RR10515HardwareMap();   // Use our Team 10515 hardware
+    BOT2HMap robot = new BOT2HMap();   // Use our Team 10515 hardware
     ElapsedTime runtime = new ElapsedTime();
 
     //public static final String TAG = "Vuforia VuMark Sample";
@@ -68,6 +68,13 @@ public RR10515Base()
         runtime.reset();
 
     }
+    public void markerDrop()
+    {
+        robot.claw.setPosition(0);
+        sleep(1000);
+        robot.claw.setPosition(1);
+
+    }
     public void unLatch(double speed,double time)
     {
         robot.liftMotor.setPower(speed);
@@ -87,7 +94,15 @@ public RR10515Base()
             //  telemetry.update();
         }
     }
-
+    public void armOut(double power, double time)
+    {
+        robot.armMotor.setPower(power);
+        while (opModeIsActive() && (runtime.seconds() < time))
+        {
+            telemetry.addData("Path", "Leg 2: %2.5f S Elapsed", runtime.seconds());
+            //  telemetry.update();
+        }
+    }
 
    /* public void driveStraightDistance(int tenthsOfIn, int masterPower)
     {
@@ -272,7 +287,7 @@ public RR10515Base()
         robot.BRightMotor.setPower(0.0);
         robot.FrightMotor.setPower(0.0);
         robot.FleftMotor.setPower(0.0);
-        // robot.liftMotor.setPower(0.0);
+        robot.liftMotor.setPower(0.0);
         //robot.hWheel.setPower(0.0);
     }
 
@@ -474,12 +489,12 @@ public RR10515Base()
         telemetry.update();
          sleep(2000);
 
-        while (angles.firstAngle > angleDegrees || angles.firstAngle < -angleDegrees) {
+        while (angles.firstAngle > angleDegrees || angles.firstAngle < angleDegrees) {
             if (angles.firstAngle > angleDegrees) {
-                turnRight(0.2, 0.1);
-
-            } else if (angles.firstAngle < -angleDegrees) {
                 turnLeft(0.2, 0.1);
+
+            } else if (angles.firstAngle < angleDegrees) {
+                turnRight(0.2, 0.1);
             }
 
             stopRobot();
@@ -488,11 +503,11 @@ public RR10515Base()
 
             telemetry.addData("firstAngle", angles.firstAngle);
             telemetry.update();
-            sleep(1000);
+            sleep(200);
             if (angles.firstAngle > angleDegrees - 5 && angles.firstAngle < angleDegrees + 5) {
                 telemetry.addData("firstAngle", angles.firstAngle);
                 telemetry.update();
-                sleep(1000);
+                sleep(100);
                 if(angles.firstAngle > angleDegrees -8 && angles.firstAngle < angleDegrees +8){
                     telemetry.addData("firstAngle", angles.firstAngle);
                     telemetry.update();
@@ -503,7 +518,7 @@ public RR10515Base()
                 telemetry.addData("heading", angles.firstAngle);
                 telemetry.addData("firstAngle", angles.firstAngle);
                 telemetry.update();
-                sleep(1000);
+                sleep(100);
             }
         }}
 
@@ -531,7 +546,7 @@ public RR10515Base()
 
             telemetry.addData("firstAngle", angles.firstAngle);
             telemetry.update();
-            sleep(1000);
+            sleep(200);
             if (angles.firstAngle > angleDegrees - 5 && angles.firstAngle < angleDegrees + 5) {
                 if(angles.firstAngle > angleDegrees -5 && angles.firstAngle < angleDegrees +5){
                     telemetry.addData("firstAngle", angles.firstAngle);
@@ -543,7 +558,7 @@ public RR10515Base()
                 telemetry.addData("heading", angles.firstAngle);
                 telemetry.addData("firstAngle", angles.firstAngle);
                 telemetry.update();
-                  sleep(1000);
+                  sleep(100);
             }
         }
 

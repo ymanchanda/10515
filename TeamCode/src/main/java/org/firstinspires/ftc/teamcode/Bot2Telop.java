@@ -61,8 +61,8 @@ public class Bot2Telop extends OpMode
     @Override
     public void loop() {
 
-        //double dist = robot.rangeSensor.getDistance(DistanceUnit.INCH);
-        //telemetry.addData("Distance", String.format("%.2f", dist));
+        double dist = robot.rangeSensor.getDistance(DistanceUnit.INCH);
+        telemetry.addData("Distance", String.format("%.2f", dist));
         //double odist = robot.rangeSensor.rawUltrasonic();
         //telemetry.addData("Raw Ultra", String.format("%.2f", odist));
         //telemetry.update();
@@ -116,11 +116,11 @@ public class Bot2Telop extends OpMode
             stopMoving();
 
     if (gamepad1.y) {
-        //if (dist > 3.5)
+        if (dist < 11.9)
             robot.liftMotor.setPower(LIFT_UP);
     }
     else if (gamepad1.a) {
-            //if (dist < 9.5)
+            if (dist > 2.9)
         robot.liftMotor.setPower(LIFT_DOWN);
     }
     else
@@ -128,14 +128,14 @@ public class Bot2Telop extends OpMode
 
     if (gamepad1.b){
       if (runtime.time() > 20.0) {
-            clawOffset = clawOffset + 0.05;
+            clawOffset = clawOffset + 0.02;
             clawOffset = Range.clip(clawOffset, 0, 0.9);
             robot.depositor.setPosition(1 - clawOffset);
             runtime.reset();
          }
     } else if (gamepad1.x) {
         if (runtime.time() > 20.0) {
-            clawOffset = clawOffset - 0.05;
+            clawOffset = clawOffset - 0.02;
             clawOffset = Range.clip(clawOffset, 0, 1);
             robot.depositor.setPosition(1 - clawOffset);
             runtime.reset();
@@ -159,9 +159,9 @@ public class Bot2Telop extends OpMode
         if (gamepad2.right_bumper && runtime.time() > 200)
             robot.spinner.setPower(0);
 
-        if(gamepad2.b)
+        if(gamepad2.x)
             robot.armMotor.setPower(LIFT_DOWN);
-        else if (gamepad2.x)
+        else if (gamepad2.b)
             robot.armMotor.setPower(LIFT_UP);
         else if (gamepad2.a)
             robot.SliderMotor.setPower(SLIDE_IN);
