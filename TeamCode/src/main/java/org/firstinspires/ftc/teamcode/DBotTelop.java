@@ -24,8 +24,8 @@ public class DBotTelop extends OpMode
     final double SERVOPOWER = 1.0;
     boolean FWD = false;
     double speedModifier = 0.30;
-    double depositorOffset = 0;
-    double markerOffset = 0;
+    double depositorOffset = 0.0;
+    double markerOffset = 0.0;
 
     ElapsedTime runtime = new ElapsedTime(ElapsedTime.Resolution.MILLISECONDS);
 
@@ -99,14 +99,14 @@ public class DBotTelop extends OpMode
         //Depositor Servo controls
         if (gamepad1.b)
             if (runtime.time() > 20.0) {
-                depositorOffset = depositorOffset + 0.02;
+                depositorOffset = depositorOffset + 0.04;
                 depositorOffset = Range.clip(depositorOffset, 0, 0.9);
                 robot.depositor.setPosition(1 - depositorOffset);
                 runtime.reset();
             }
         else if (gamepad1.x)
             if (runtime.time() > 20.0) {
-                depositorOffset = depositorOffset - 0.02;
+                depositorOffset = depositorOffset - 0.04;
                 depositorOffset = Range.clip(depositorOffset, 0, 1);
                 robot.depositor.setPosition(1 - depositorOffset);
                 runtime.reset();
