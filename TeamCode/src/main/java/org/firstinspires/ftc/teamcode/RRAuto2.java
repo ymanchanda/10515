@@ -51,6 +51,7 @@ import java.util.Locale;
  */
 
 @Autonomous(name="Rover Crater Auto", group="Team10515")
+@Disabled
 public class RRAuto2 extends RR10515Base
 {
 

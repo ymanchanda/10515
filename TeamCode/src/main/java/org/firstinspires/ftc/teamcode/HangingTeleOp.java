@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -8,6 +9,7 @@ import com.qualcomm.robotcore.util.Range;
 /**
  * Created by umang on 9/14/18.
  */
+@Disabled
 @TeleOp(name = "XtremeV Hanging Teleop ", group = "Team10515")
 public class HangingTeleOp extends OpMode
 {

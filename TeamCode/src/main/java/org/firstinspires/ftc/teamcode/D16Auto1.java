@@ -47,6 +47,7 @@ import java.util.Locale;
 
 
 /* This program will go straight  hit the capball  and park the bot at the center vertex  */
+@Disabled
 @Autonomous(name="Depot Facing 1", group="Ttyteam10515")
 public class D16Auto1 extends RR10515Base
 {

@@ -47,6 +47,7 @@ import java.util.Locale;
 
 
     /* This program will go straight  hit the capball  and park the bot at the center vertex  */
+@Disabled
     @Autonomous(name="Bot Depot 1", group="Team10515")
     public class RRAutoTest1 extends RR10515Base
     {

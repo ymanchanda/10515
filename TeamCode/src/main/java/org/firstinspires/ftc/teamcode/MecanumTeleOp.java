@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -11,6 +12,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 /**
  * Created by umang on 9/14/18.
  */
+@Disabled
 @TeleOp(name = "XtremeV Mecanum Teleop ", group = "Team10515")
 public class MecanumTeleOp extends OpMode
 {

@@ -93,7 +93,7 @@ import java.util.Locale;
  * IMPORTANT: In order to use this OpMode, you need to obtain your own Vuforia license key as
  * is explained below.
  */
-
+@Disabled
 @TeleOp(name="RR AutoVuWebcam", group ="Team10515")
 public class VuWebcamTest extends LinearOpMode {
 

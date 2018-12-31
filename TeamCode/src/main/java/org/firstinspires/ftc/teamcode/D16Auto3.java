@@ -3,6 +3,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.Func;
@@ -21,6 +22,7 @@ import java.util.Locale;
 
 
 /* This program will go straight  hit the capball  and park the bot at the center vertex  */
+@Disabled
 @Autonomous(name="Non Depot Facing", group="Ttyteam10515")
 public class D16Auto3 extends RR10515Base
 {

@@ -90,7 +90,7 @@ import static org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocaliz
  * IMPORTANT: In order to use this OpMode, you need to obtain your own Vuforia license key as
  * is explained below.
  */
-
+@Disabled
 @TeleOp(name="Concept: Vuforia Rover Nav", group ="Concept")
 public class ConceptVuforiaNavRoverRuckus extends LinearOpMode {
 
