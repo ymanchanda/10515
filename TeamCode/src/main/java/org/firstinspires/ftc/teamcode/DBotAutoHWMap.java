@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
+import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cRangeSensor;
 import com.qualcomm.hardware.rev.Rev2mDistanceSensor;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
@@ -28,6 +29,7 @@ public class DBotAutoHWMap
 
     public BNO055IMU    imu                 = null;  //gyro
     public Rev2mDistanceSensor rightSensor  = null;  //right distance sensor
+    public  ModernRoboticsI2cRangeSensor frontSensor = null;
 
     static private final String  FRONTRIGHT = "FR";
     static private final String  FRONTLEFT  = "FL";
@@ -44,6 +46,7 @@ public class DBotAutoHWMap
     static private final String  COLORAE    = "CAE";
     static private final String  IMU        = "imu";
     static private final String  RIGHTSENSOR = "R";
+    static private final String FRONTSENSOR = "MR";
 
      /* local OpMode members. */
     HardwareMap hwMap           =  null;
@@ -70,6 +73,8 @@ public class DBotAutoHWMap
         marker  = hwMap.servo.get(MARKER);
         depositor = hwMap.servo.get(DEPOSITOR);
         rightSensor = hwMap.get(Rev2mDistanceSensor.class, RIGHTSENSOR);
+        frontSensor = hwMap.get(ModernRoboticsI2cRangeSensor.class, FRONTSENSOR);
+
 
         FL.setDirection(DcMotor.Direction.REVERSE);
         FR.setDirection(DcMotor.Direction.FORWARD);
@@ -95,8 +100,9 @@ public class DBotAutoHWMap
         AE.setPower(0);
         LL.setPower(0);
         AA.setPower(0);
-
+        marker.setPosition(0.5);
         rightSensor.initialize();
+        frontSensor.initialize();
 
         // May want to use RUN_USING_ENCODERS if encoders are installed.
         FL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);

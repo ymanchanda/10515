@@ -60,6 +60,7 @@ public class D16Auto1 extends RR10515Base
     private Orientation angles;
     private Acceleration gravity;
 
+    //Vuforia key
     private static final String VUFORIA_KEY = "AVVrDYb/////AAABmT0TlZXDYE3gpf/zMjQrOgACsYT0LcTPCkhjAmq0XO3HT0RdGx2eP+Lwumhftz4e/g28CBGg1HmaFfy5kW9ioO4UGDeokDyxRfqWjNQwKG3BanmjCXxMxACaJ7iom5J3o4ylWNmuiyxsK8n1fFf2dVsTUsvUI7aRxqTahnIqqRJRsGmxld18eHy/ZhHfIjOyifi4svZUQiput21/jAloTx0sTnnrpR1Y/xGOz+68sGuXIgLZHpAQSoZnXiczGKdahGXOg3n6dXlQPIiASE1kHp253CTwO40l1HHN083m4wYjP4FCl/9TH3tb0Wj/Ccmlhfz2omhnZQKOBe7RsIxRk+PuEGkIe5hCs/lV9+yf9iBm";
     private VuforiaLocalizer vuforia;
     private TFObjectDetector tfod;
@@ -68,9 +69,6 @@ public class D16Auto1 extends RR10515Base
     public void runOpMode() {
 
         robot.init(hardwareMap);
-        //calibrateGyro();
-        //sleep(2000);
-
         // Send telemetry message to signify robotrt waiting;
         telemetry.addData("Status", "Ready to run");    //
         telemetry.update();

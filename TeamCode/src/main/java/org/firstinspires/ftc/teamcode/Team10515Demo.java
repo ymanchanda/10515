@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
-
+@Disabled
 /* Created by Aashray on 10/29/18. */
 @TeleOp(name = "Demo", group = "Team10515")
 public class Team10515Demo extends OpMode

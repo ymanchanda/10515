@@ -1,0 +1,256 @@
+<html>
+<head>
+<title>DBotAuto1.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(128,128,128); font-style: italic; }
+.s3 { color: rgb(0,128,0); font-weight: bold; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+DBotAuto1.java</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<span class="s0">package </span><span class="s1">org.firstinspires.ftc.teamcode; 
+ 
+</span><span class="s0">import </span><span class="s1">com.qualcomm.robotcore.eventloop.opmode.Autonomous; 
+</span><span class="s0">import </span><span class="s1">com.qualcomm.robotcore.eventloop.opmode.Disabled; 
+ 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.ClassFactory; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.Func; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.Acceleration; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.AngleUnit; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.AxesOrder; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.AxesReference; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.Orientation; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.tfod.Recognition; 
+</span><span class="s0">import </span><span class="s1">org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector; 
+ 
+</span><span class="s0">import </span><span class="s1">java.util.List; 
+</span><span class="s0">import </span><span class="s1">java.util.Locale; 
+ 
+ 
+</span><span class="s2">/* This program will go straight  hit the capball  and park the bot at the center vertex  */</span><span class="s1"> 
+@Autonomous(name=</span><span class="s3">&quot;D-Bot Depot&quot;</span><span class="s1">, group=</span><span class="s3">&quot;XtremeV&quot;</span><span class="s1">) 
+</span><span class="s0">public class </span><span class="s1">DBotAuto1 </span><span class="s0">extends </span><span class="s1">DBotBase 
+{ 
+    </span><span class="s2">// State used for updating telemetry</span><span class="s1"> 
+    </span><span class="s0">private </span><span class="s1">Orientation angles; 
+    </span><span class="s0">private </span><span class="s1">Acceleration gravity; 
+    </span><span class="s0">private double </span><span class="s1">headingResetValue; 
+ 
+ 
+ 
+    @Override 
+    </span><span class="s0">public void </span><span class="s1">runOpMode() { 
+ 
+        robot.init(hardwareMap); 
+        </span><span class="s2">//sleep(2000);</span><span class="s1"> 
+ 
+        initVuforia(); 
+        </span><span class="s0">if </span><span class="s1">(ClassFactory.getInstance().canCreateTFObjectDetector()) { 
+            initTfod(); 
+        } </span><span class="s0">else </span><span class="s1">{ 
+            telemetry.addData(</span><span class="s3">&quot;Sorry!&quot;</span><span class="s1">, </span><span class="s3">&quot;This device is not compatible with TFOD&quot;</span><span class="s1">); 
+            telemetry.update(); 
+        } 
+ 
+        </span><span class="s2">// Send telemetry message to signify robotrt waiting;</span><span class="s1"> 
+        telemetry.addData(</span><span class="s3">&quot;Status&quot;</span><span class="s1">, </span><span class="s3">&quot;Ready to run&quot;</span><span class="s1">);    </span><span class="s2">//</span><span class="s1"> 
+        telemetry.update(); 
+ 
+        </span><span class="s2">// Wait for the game to start (driver presses PLAY)</span><span class="s1"> 
+        waitForStart(); 
+ 
+        </span><span class="s0">this</span><span class="s1">.headingResetValue = </span><span class="s0">this</span><span class="s1">.getAbsoluteHeading(); 
+ 
+        String position = getGoldPositionHardCode(); 
+        sleep(</span><span class="s4">500</span><span class="s1">); 
+     </span><span class="s2">//   latchUp(1.0,5.5);</span><span class="s1"> 
+        stopRobot(); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+ 
+        </span><span class="s2">//turn to the right 45 degree call turn_to_heading(45);</span><span class="s1"> 
+        </span><span class="s2">//turn to the left 45 degree call turn_to_heading(0); //its relative to previous turn</span><span class="s1"> 
+        </span><span class="s2">//to move forward 10 inches call move_forward(10,0.3);</span><span class="s1"> 
+        </span><span class="s2">//to move back 10 inches call move_forward(10, 0, -0.3);</span><span class="s1"> 
+        </span><span class="s2">//to move sideways to the right by 4 inches call move_sideways(90, 0.3, 4);</span><span class="s1"> 
+        </span><span class="s2">//to move sideways to left by 4 inches call move_sideways(180, 0.3, 4)</span><span class="s1"> 
+ 
+ 
+        </span><span class="s0">if </span><span class="s1">(position.equals(</span><span class="s3">&quot;Right&quot;</span><span class="s1">)) 
+            removeRight(); 
+        </span><span class="s0">else if </span><span class="s1">(position.equals(</span><span class="s3">&quot;Center&quot;</span><span class="s1">)) 
+            removeCenter(); 
+        </span><span class="s0">else if</span><span class="s1">(position.equals(</span><span class="s3">&quot;Left&quot;</span><span class="s1">)) 
+            removeLeft(); 
+        </span><span class="s0">else</span><span class="s1"> 
+          removeRight(); 
+ 
+        </span><span class="s2">// Start the logging of measured acceleration</span><span class="s1"> 
+        stopRobot(); 
+ 
+    } 
+ 
+    </span><span class="s0">public void </span><span class="s1">removeCenter() 
+    { 
+        move_sideways_by_range(</span><span class="s4">90</span><span class="s1">, </span><span class="s4">0.40</span><span class="s1">, </span><span class="s4">10</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        turn_to_heading(</span><span class="s4">45</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(</span><span class="s4">180</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">5</span><span class="s1">); 
+        </span><span class="s2">//markerDrop();</span><span class="s1"> 
+        goToCrater(); 
+ 
+    } 
+    </span><span class="s0">public void </span><span class="s1">removeLeft() 
+    { 
+        move_sideways(</span><span class="s4">180</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">2</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(</span><span class="s4">90</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">12</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        turn_to_heading(</span><span class="s4">135</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(-</span><span class="s4">90</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">45</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(</span><span class="s4">0</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">40</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        </span><span class="s2">//markerDrop();</span><span class="s1"> 
+        turn_to_heading(</span><span class="s4">45</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(</span><span class="s4">180</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">5</span><span class="s1">); 
+        sleep(</span><span class="s4">200</span><span class="s1">); 
+        </span><span class="s2">//markerDrop();</span><span class="s1"> 
+        goToCrater(); 
+ 
+    } 
+    </span><span class="s0">public void </span><span class="s1">removeRight() 
+    { 
+        move_sideways(</span><span class="s4">90</span><span class="s1">, </span><span class="s4">0.3</span><span class="s1">, </span><span class="s4">2</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        </span><span class="s2">//move_forward(1,0.3);</span><span class="s1"> 
+        move_sideways(</span><span class="s4">0</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">1</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        turn_to_heading(</span><span class="s4">45</span><span class="s1">); 
+        </span><span class="s2">//move_sideways(90, 0.3, 40);</span><span class="s1"> 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways_by_range(</span><span class="s4">90</span><span class="s1">, </span><span class="s4">0.3</span><span class="s1">, </span><span class="s4">4.5</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        turn_to_heading(</span><span class="s4">45</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+ 
+        move_sideways(</span><span class="s4">0</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">35</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+ 
+        move_sideways(</span><span class="s4">180</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">2</span><span class="s1">); 
+        goToCrater(); 
+ 
+    } 
+  </span><span class="s0">private void </span><span class="s1">goToCrater() 
+    { 
+        move_sideways_by_range(</span><span class="s4">90</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">4</span><span class="s1">); 
+        markerDrop(); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(</span><span class="s4">180</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">55</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways_by_range(</span><span class="s4">270</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">6</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        turn_to_heading(</span><span class="s4">225</span><span class="s1">); 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        </span><span class="s2">//move_sideways(-90,0.3,3);</span><span class="s1"> 
+        sleep(</span><span class="s4">100</span><span class="s1">); 
+        move_sideways(</span><span class="s4">0</span><span class="s1">,</span><span class="s4">0.3</span><span class="s1">,</span><span class="s4">30</span><span class="s1">); 
+ 
+        robot.AA.setPower(</span><span class="s4">.6</span><span class="s1">); 
+        sleep(</span><span class="s4">300</span><span class="s1">); 
+ 
+ 
+    } 
+ 
+ 
+    </span><span class="s0">void </span><span class="s1">composeTelemetry() { 
+ 
+        </span><span class="s2">// At the beginning of each telemetry update, grab a bunch of data</span><span class="s1"> 
+        </span><span class="s2">// from the IMU that we will then display in separate lines.</span><span class="s1"> 
+        telemetry.addAction(</span><span class="s0">new </span><span class="s1">Runnable() { @Override </span><span class="s0">public void </span><span class="s1">run() 
+        { 
+            </span><span class="s2">// Acquiring the angles is relatively expensive; we don't want</span><span class="s1"> 
+            </span><span class="s2">// to do that in each of the three items that need that info, as that's</span><span class="s1"> 
+            </span><span class="s2">// three times the necessary expense.</span><span class="s1"> 
+            angles   = robot.imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.DEGREES); 
+            gravity  = robot.imu.getGravity(); 
+        } 
+        }); 
+ 
+        telemetry.addLine() 
+                .addData(</span><span class="s3">&quot;status&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">robot.imu.getSystemStatus().toShortString(); 
+                    } 
+                }) 
+                .addData(</span><span class="s3">&quot;calib&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">robot.imu.getCalibrationStatus().toString(); 
+                    } 
+                }); 
+ 
+        telemetry.addLine() 
+                .addData(</span><span class="s3">&quot;heading&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">formatAngle(angles.angleUnit, angles.firstAngle); 
+                    } 
+                }) 
+                .addData(</span><span class="s3">&quot;roll&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">formatAngle(angles.angleUnit, angles.secondAngle); 
+                    } 
+                }) 
+                .addData(</span><span class="s3">&quot;pitch&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">formatAngle(angles.angleUnit, angles.thirdAngle); 
+                    } 
+                }); 
+ 
+        telemetry.addLine() 
+                .addData(</span><span class="s3">&quot;grvty&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">gravity.toString(); 
+                    } 
+                }) 
+                .addData(</span><span class="s3">&quot;mag&quot;</span><span class="s1">, </span><span class="s0">new </span><span class="s1">Func&lt;String&gt;() { 
+                    @Override </span><span class="s0">public </span><span class="s1">String value() { 
+                        </span><span class="s0">return </span><span class="s1">String.format(Locale.getDefault(), </span><span class="s3">&quot;%.3f&quot;</span><span class="s1">, 
+                                Math.sqrt(gravity.xAccel*gravity.xAccel 
+                                        + gravity.yAccel*gravity.yAccel 
+                                        + gravity.zAccel*gravity.zAccel)); 
+                    } 
+                }); 
+    } 
+ 
+ 
+ 
+    String formatAngle(AngleUnit angleUnit, </span><span class="s0">double </span><span class="s1">angle) { 
+        </span><span class="s0">return </span><span class="s1">formatDegrees(AngleUnit.DEGREES.fromUnit(angleUnit, angle)); 
+    } 
+    String formatDegrees(</span><span class="s0">double </span><span class="s1">degrees){ 
+        </span><span class="s0">return </span><span class="s1">String.format(Locale.getDefault(), </span><span class="s3">&quot;%.1f&quot;</span><span class="s1">, AngleUnit.DEGREES.normalize(degrees)); 
+    } 
+    </span><span class="s0">private double </span><span class="s1">getAbsoluteHeading() { 
+        </span><span class="s0">return </span><span class="s1">robot.imu.getAngularOrientation(AxesReference.INTRINSIC , AxesOrder.ZYX, AngleUnit.DEGREES).firstAngle; 
+    } 
+    </span><span class="s0">private double </span><span class="s1">getRelativeHeading() { 
+        </span><span class="s0">return this</span><span class="s1">.getAbsoluteHeading() - </span><span class="s0">this</span><span class="s1">.headingResetValue; 
+    } 
+} 
+</span></pre>
+</body>
+</html>

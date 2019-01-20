@@ -23,19 +23,12 @@ import java.util.Locale;
 @Autonomous(name="D-Bot Depot", group="XtremeV")
 public class DBotAuto1 extends DBotBase
 {
-    private static final String TFOD_MODEL_ASSET = "RoverRuckus.tflite";
-    private static final String LABEL_GOLD_MINERAL = "Gold Mineral";
-    private static final String LABEL_SILVER_MINERAL = "Silver Mineral";
-
     // State used for updating telemetry
     private Orientation angles;
     private Acceleration gravity;
     private double headingResetValue;
 
 
-    private static final String VUFORIA_KEY = "AVVrDYb/////AAABmT0TlZXDYE3gpf/zMjQrOgACsYT0LcTPCkhjAmq0XO3HT0RdGx2eP+Lwumhftz4e/g28CBGg1HmaFfy5kW9ioO4UGDeokDyxRfqWjNQwKG3BanmjCXxMxACaJ7iom5J3o4ylWNmuiyxsK8n1fFf2dVsTUsvUI7aRxqTahnIqqRJRsGmxld18eHy/ZhHfIjOyifi4svZUQiput21/jAloTx0sTnnrpR1Y/xGOz+68sGuXIgLZHpAQSoZnXiczGKdahGXOg3n6dXlQPIiASE1kHp253CTwO40l1HHN083m4wYjP4FCl/9TH3tb0Wj/Ccmlhfz2omhnZQKOBe7RsIxRk+PuEGkIe5hCs/lV9+yf9iBm";
-    private VuforiaLocalizer vuforia;
-    private TFObjectDetector tfod;
 
     @Override
     public void runOpMode() {
@@ -43,21 +36,30 @@ public class DBotAuto1 extends DBotBase
         robot.init(hardwareMap);
         //sleep(2000);
 
+        initVuforia();
+        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
+            initTfod();
+        } else {
+            telemetry.addData("Sorry!", "This device is not compatible with TFOD");
+            telemetry.update();
+        }
+
         // Send telemetry message to signify robotrt waiting;
         telemetry.addData("Status", "Ready to run");    //
         telemetry.update();
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
+
         this.headingResetValue = this.getAbsoluteHeading();
 
-        //String position = getGoldPosition();
-        String position = "RIGHT";
-        //unLatch(1.0,5.5);
+       // String position = getGoldPositionHardCode();
+        String position = getGoldPosition();
+        sleep(500);
+        latchUp(1.0,5.5);
         stopRobot();
         sleep(100);
 
-        //robot.calibrateGyro(); dont want to do this because if it doesnt come down straight
         //turn to the right 45 degree call turn_to_heading(45);
         //turn to the left 45 degree call turn_to_heading(0); //its relative to previous turn
         //to move forward 10 inches call move_forward(10,0.3);
@@ -65,11 +67,12 @@ public class DBotAuto1 extends DBotBase
         //to move sideways to the right by 4 inches call move_sideways(90, 0.3, 4);
         //to move sideways to left by 4 inches call move_sideways(180, 0.3, 4)
 
-        if (position.equals("RIGHT"))
+
+        if (position.equals("Right"))
             removeRight();
-        else if (position.equals("CENTER"))
+        else if (position.equals("Center"))
             removeCenter();
-        else if(position.equals("LEFT"))
+        else if(position.equals("Left"))
             removeLeft();
         else
           removeRight();
@@ -82,164 +85,92 @@ public class DBotAuto1 extends DBotBase
     public void removeCenter()
     {
         move_sideways_by_range(90, 0.40, 10);
+        sleep(100);
         turn_to_heading(45);
-        move_forward(40, -0.3);
-        //repositionBotAntiClock(45);
-        //moveStraight(-200,0.2);
+        sleep(100);
+        move_right(0.3,2.5);
+        sleep(100);
+        move_left(0.3,2.5);
+        sleep(100);
+        move_back(0.3,7);
         //markerDrop();
-        //wallfollow(70,45,-.5,1,true,true);
-        //moveStraight(600,0.2);
-        //moveSide(300,0.2);
         goToCrater();
-        //sweep mineral in
+
     }
     public void removeLeft()
     {
-        //moveSide(990,0.2, false);
-        //turn_to_heading(45);
-        //moveSide(990,.2, false);
-        markerDrop();
-        //wallfollow(70,45,-.5,1,true,true);
-
-        //repositionBot(20.0);
-        //sleep(2000);
-//        moveStraight(-1450,0.2);
-//        repositionBotAntiClock(45.0);
-//        moveSide(800,0.2);
-//        moveStraight(-100,0.2);
-//        markerDrop();
-//        moveStraight(800,0.2);
-//        moveSide(300,0.2);
+        move_back(0.3,2);
+        sleep(100);
+        move_right(0.3,12);
+        sleep(100);
+        turn_to_heading(135);
+        sleep(100);
+        move_forward(0.3,2);
+        move_left(0.3,45);
+        sleep(100);
+        turn_to_heading(138);
+        sleep(50);
+        move_forward(0.3,35);
+        sleep(100);
+        //markerDrop();
+        turn_to_heading(45);
+        sleep(100);
+        move_back(0.3,6);
+        sleep(200);
+        //markerDrop();
         goToCrater();
-        //sweep mineral in and then get ready to go in to depot
 
     }
     public void removeRight()
     {
-        move_sideways(90, 0.3, 2);
+        move_right(0.3, 2);
         sleep(100);
-        move_forward(1,0.3);
+        //move_forward(1,0.3);
+        move_forward(0.3,1);
         sleep(100);
         turn_to_heading(45);
+        sleep(100);
         //move_sideways(90, 0.3, 40);
+        move_forward(0.3,2);
         sleep(100);
-        move_sideways_by_range(90, 0.3, 4.5);
+        move_sideways_by_range(90, 0.3, 5);
         sleep(100);
-        move_forward(20,0.3);
+        turn_to_heading(45);
         sleep(100);
-        //markerDrop();
-        //sleep(100);
-        //sleep(100);
-        move_forward(70, -0.3);
+        move_right(0.3,2);
+        sleep(100);
+        move_left(0.3,2);
+        sleep(100);
+        move_forward(0.3,35);
+        sleep(100);
 
-        //markerDrop();
-        //wallfollow(70,45,-.5,1,true,true);
-        //goToCrater();
-        //sweep mineral in and then get ready to go in to depot
+        move_back(0.3,4);
+        goToCrater();
 
     }
   private void goToCrater()
     {
+        move_sideways_by_range(90,0.3,3);
+        markerDrop();
+        sleep(100);
+        move_back(0.3,53);
+        sleep(100);
+        move_left_by_range(0.3,4.75);
+        sleep(100);
+        turn_to_heading(225);
+        sleep(100);
+        move_forward(0.3,16);
+        //move_sideways(-90,0.3,3);
+        sleep(100);
+        //move_sideways(0,0.3,30);
 
-        //moveStraight(1700,.2);
-        //moveSide(230,.2);
-        //moveStraight(800,.2);
-        //repositionBotAntiClock(65);
-        //parkCrater(0,.5);
+        robot.AA.setPower(.6);
+        robot.AE.setPower(0.4);
+        sleep(300);
+
+
     }
 
-
-    public String getGoldPosition() {
-        String pos = "Error";
-
-        try {
-
-            initVuforia();
-            if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
-                initTfod();
-            } else {
-                telemetry.addData("Sorry!", "This device is not compatible with TFOD");
-                telemetry.update();
-            }
-            if (tfod != null) {
-                sleep(200);
-                tfod.activate();
-                double getTime = getRuntime();
-                while (opModeIsActive() && (pos == "Error" || getRuntime() - getTime <= 3)) {
-                    if (tfod != null) {
-                        // getUpdatedRecognitions() will return null if no new information is available since
-                        // the last time that call was made.
-                        List<Recognition> updatedRecognitions = tfod.getUpdatedRecognitions();
-                        if (updatedRecognitions != null) {
-                            telemetry.addData("# Object Detected", updatedRecognitions.size());
-                            if (updatedRecognitions.size() == 3) {
-                                int goldMineralX = -1;
-                                int silverMineral1X = -1;
-                                int silverMineral2X = -1;
-                                for (Recognition recognition : updatedRecognitions) {
-                                    if (recognition.getLabel().equals(LABEL_GOLD_MINERAL)) {
-                                        goldMineralX = (int) recognition.getLeft();
-                                    } else if (silverMineral1X == -1) {
-                                        silverMineral1X = (int) recognition.getLeft();
-                                    } else {
-                                        silverMineral2X = (int) recognition.getLeft();
-                                    }
-                                }
-                                if (goldMineralX != -1 && silverMineral1X != -1 && silverMineral2X != -1) {
-                                    if (goldMineralX < silverMineral1X && goldMineralX < silverMineral2X) {
-                                        pos = "LEFT";
-                                        telemetry.addData("Gold Mineral Position", "Left");
-                                    } else if (goldMineralX > silverMineral1X && goldMineralX > silverMineral2X) {
-                                        pos = "RIGHT";
-                                        telemetry.addData("Gold Mineral Position", "Right");
-                                    } else {
-                                        pos = "CENTER";
-                                        telemetry.addData("Gold Mineral Position", "Center");
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception ex) {
-            pos = "Error";
-            telemetry.addData("Don't know Gold Mineral Position", "Error");
-        }
-        finally {
-            if (tfod != null) {
-                tfod.shutdown();
-                vuforia = null;
-            }
-        }
-        telemetry.update();
-        return pos;
-    }
-
-    /**
-     * Initialize the Vuforia localization engine.
-     */
-    private void initVuforia() {
-        /* Configure Vuforia by creating a Parameter object, and passing it to the Vuforia engine. */
-        VuforiaLocalizer.Parameters parameters = new VuforiaLocalizer.Parameters();
-
-        parameters.vuforiaLicenseKey = VUFORIA_KEY;
-        parameters.cameraDirection = CameraDirection.FRONT;
-        //  Instantiate the Vuforia engine
-        vuforia = ClassFactory.getInstance().createVuforia(parameters);
-
-        // Loading trackables is not necessary for the Tensor Flow Object Detection engine.
-    }
-
-    /* Initialize the Tensor Flow Object Detection engine. */
-    private void initTfod() {
-        int tfodMonitorViewId = hardwareMap.appContext.getResources().getIdentifier(
-                "tfodMonitorViewId", "id", hardwareMap.appContext.getPackageName());
-        TFObjectDetector.Parameters tfodParameters = new TFObjectDetector.Parameters(tfodMonitorViewId);
-        tfod = ClassFactory.getInstance().createTFObjectDetector(tfodParameters, vuforia);
-        tfod.loadModelFromAsset(TFOD_MODEL_ASSET, LABEL_GOLD_MINERAL, LABEL_SILVER_MINERAL);
-    }
 
     void composeTelemetry() {
 
