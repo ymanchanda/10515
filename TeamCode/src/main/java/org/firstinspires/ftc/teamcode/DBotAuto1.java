@@ -10,16 +10,16 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
-import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
-import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection;
-import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
-import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
+//import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
+//import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer.CameraDirection;
+//import org.firstinspires.ftc.robotcore.external.tfod.Recognition;
+//import org.firstinspires.ftc.robotcore.external.tfod.TFObjectDetector;
 
-import java.util.List;
+//import java.util.List;
 import java.util.Locale;
 
 
-/* This program will go straight  hit the capball  and park the bot at the center vertex  */
+/* This program will delatch, sample, deposit our team marker, then park in our own crater  */
 @Autonomous(name="D-Bot Depot", group="XtremeV")
 public class DBotAuto1 extends DBotBase
 {
@@ -28,8 +28,7 @@ public class DBotAuto1 extends DBotBase
     private Acceleration gravity;
     private double headingResetValue;
 
-
-
+    private static double speed_value = 0.30;
     @Override
     public void runOpMode() {
 
@@ -55,7 +54,7 @@ public class DBotAuto1 extends DBotBase
 
        // String position = getGoldPositionHardCode();
         String position = getGoldPosition();
-        sleep(500);
+        sleep(200);
         latchUp(1.0,5.5);
         stopRobot();
         sleep(100);
@@ -88,34 +87,34 @@ public class DBotAuto1 extends DBotBase
         sleep(100);
         turn_to_heading(45);
         sleep(100);
-        move_right(0.3,2.5);
+        move_right(speed_value,2.5);
         sleep(100);
-        move_left(0.3,2.5);
+        move_left(speed_value,2.5);
         sleep(100);
-        move_back(0.3,7);
+        move_back(speed_value,7);
         //markerDrop();
         goToCrater();
 
     }
     public void removeLeft()
     {
-        move_back(0.3,2);
+        move_back(speed_value,2);
         sleep(100);
-        move_right(0.3,12);
+        move_right(speed_value,12);
         sleep(100);
         turn_to_heading(135);
         sleep(100);
-        move_forward(0.3,2);
-        move_left(0.3,45);
+        move_forward(speed_value,2);
+        move_left(speed_value,45);
         sleep(100);
         turn_to_heading(138);
         sleep(50);
-        move_forward(0.3,35);
+        move_forward(speed_value,35);
         sleep(100);
         //markerDrop();
         turn_to_heading(45);
         sleep(100);
-        move_back(0.3,6);
+        move_back(speed_value,6);
         sleep(200);
         //markerDrop();
         goToCrater();
@@ -123,46 +122,46 @@ public class DBotAuto1 extends DBotBase
     }
     public void removeRight()
     {
-        move_right(0.3, 2);
+        move_right(speed_value, 2);
         sleep(100);
-        //move_forward(1,0.3);
-        move_forward(0.3,1);
-        sleep(100);
-        turn_to_heading(45);
-        sleep(100);
-        //move_sideways(90, 0.3, 40);
-        move_forward(0.3,2);
-        sleep(100);
-        move_sideways_by_range(90, 0.3, 5);
+        //move_forward(1,speed_value);
+        move_forward(speed_value,1);
         sleep(100);
         turn_to_heading(45);
         sleep(100);
-        move_right(0.3,2);
+        //move_sideways(90, speed_value, 40);
+        move_forward(speed_value,2);
         sleep(100);
-        move_left(0.3,2);
+        move_sideways_by_range(90, speed_value, 5);
         sleep(100);
-        move_forward(0.3,35);
+        turn_to_heading(45);
+        sleep(100);
+        move_right(speed_value,2);
+        sleep(100);
+        move_left(speed_value,2);
+        sleep(100);
+        move_forward(speed_value,35);
         sleep(100);
 
-        move_back(0.3,4);
+        move_back(speed_value,4);
         goToCrater();
 
     }
   private void goToCrater()
     {
-        move_sideways_by_range(90,0.3,3);
+        move_sideways_by_range(90,speed_value,3);
         markerDrop();
         sleep(100);
-        move_back(0.3,53);
+        move_back(speed_value,53);
         sleep(100);
-        move_left_by_range(0.3,4.75);
+        move_left_by_range(speed_value,4.75);
         sleep(100);
         turn_to_heading(225);
         sleep(100);
-        move_forward(0.3,16);
-        //move_sideways(-90,0.3,3);
+        move_forward(speed_value,16);
+        //move_sideways(-90,speed_value,3);
         sleep(100);
-        //move_sideways(0,0.3,30);
+        //move_sideways(0,speed_value,30);
 
         robot.AA.setPower(.6);
         robot.AE.setPower(0.4);

@@ -167,10 +167,14 @@ public class DBotAuto4 extends DBotBase
         sleep(100);
         move_forward_by_range(0.3,10);
         sleep(50);
-        move_right_by_range(0.3,3);
+        turn_to_heading(-10);
+        //move_right_by_range(0.3,3);
         sleep(50);
         markerDrop();
+        turn_to_heading(318);
         sleep(50);
+        move_right_by_range(0.3,3);
+        sleep(100);
         move_back(0.3,50);
 
         //move_backward_by_range(0.3,55);

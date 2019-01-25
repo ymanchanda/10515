@@ -26,7 +26,7 @@ public class DBotTelop extends OpMode
     final double SERVOPOWER = 1.0;
     boolean FWD = false;
     double speedModifier = 0.55;
-    double depositorOffset = 0;
+    double depositorOffset = 0.0;
     double markerOffset = 0;
     boolean ledOn = true;
 
@@ -108,13 +108,13 @@ public class DBotTelop extends OpMode
 
             //Depositor Servo controls
             if (gamepad1.x && runtime.time() > 10.0) {
-                depositorOffset += 0.025;
-                depositorOffset = Range.clip(depositorOffset, 0, 1);
+                depositorOffset += 0.02;
+                depositorOffset = Range.clip(depositorOffset, 0.2, 0.8);
                 robot.depositor.setPosition(depositorOffset);
                 runtime.reset();
-            } else if (gamepad1.b && runtime.time() > 20.0) {
-                depositorOffset -= 0.015;
-                depositorOffset = Range.clip(depositorOffset, 0, 1);
+            } else if (gamepad1.b && runtime.time() > 10.0) {
+                depositorOffset -= 0.02;
+                depositorOffset = Range.clip(depositorOffset, 0.2, 0.8);
                 robot.depositor.setPosition(depositorOffset);
                 runtime.reset();
             }
@@ -124,7 +124,7 @@ public class DBotTelop extends OpMode
                 markerOffset = Range.clip(markerOffset, 0, 1);
                 robot.marker.setPosition(markerOffset);
                 runtime.reset();
-            } else if (gamepad1.dpad_left && runtime.time() > 20.0) {
+            } else if (gamepad1.dpad_left && runtime.time() > 10.0) {
                 markerOffset -= 0.015;
                 markerOffset = Range.clip(markerOffset, 0, 1);
                 robot.marker.setPosition(markerOffset);
@@ -198,6 +198,8 @@ public class DBotTelop extends OpMode
                         runtime.reset();
                     }
                 }
+            telemetry.addData("Depositor at: ", depositorOffset);
+            telemetry.update();
         }
 
         catch(Exception ex) {

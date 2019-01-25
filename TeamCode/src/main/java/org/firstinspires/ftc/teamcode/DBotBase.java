@@ -59,7 +59,8 @@ public abstract class DBotBase extends LinearOpMode {
     public void markerDrop() {
         robot.marker.setPosition(0);
         sleep(400);
-        robot.marker.setPosition(0.8);
+        robot.marker.setPosition(0.2);
+        //robot.marker.setPosition(0.8);
 
     }
 

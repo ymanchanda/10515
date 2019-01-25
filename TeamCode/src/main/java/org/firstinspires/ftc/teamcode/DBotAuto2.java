@@ -160,13 +160,16 @@ public class DBotAuto2 extends DBotBase
   private void goToCrater()
     {
         //move_sideways_by_range(90,0.3,4);
+        turn_to_heading(70);
+        sleep(100);
         markerDrop();
+        turn_to_heading(45);
         sleep(100);
         move_back(0.3,1);
         sleep(100);
         move_left_by_range(0.3,21);
         sleep(100);
-        move_forward_by_range(0.3,3);
+        move_forward_by_range(0.3,5);
         sleep(100);
         move_left(0.3,35);
         sleep(100);
@@ -182,11 +185,11 @@ public class DBotAuto2 extends DBotBase
 //        sleep(100);
 //        move_sideways_by_range(90,0.3,4);
 //        sleep(100);
-        move_forward(0.3,35);
+        move_forward(0.3,25);
 
         robot.AE.setPower(0.4);
         robot.AA.setPower(.6);
-        sleep(300);
+        sleep(800);
 
     }
 
