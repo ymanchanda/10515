@@ -28,7 +28,7 @@ public class DBotAuto1 extends DBotBase
     private Acceleration gravity;
     private double headingResetValue;
 
-    private static double speed_value = 0.30;
+    private static double speed_value = 0.3;
     @Override
     public void runOpMode() {
 
@@ -149,8 +149,11 @@ public class DBotAuto1 extends DBotBase
     }
   private void goToCrater()
     {
-        move_sideways_by_range(90,speed_value,3);
+       turn_to_heading(70);
         markerDrop();
+        turn_to_heading(45);
+        sleep(100);
+        move_sideways_by_range(90,speed_value,3);
         sleep(100);
         move_back(speed_value,53);
         sleep(100);
@@ -165,7 +168,7 @@ public class DBotAuto1 extends DBotBase
 
         robot.AA.setPower(.6);
         robot.AE.setPower(0.4);
-        sleep(300);
+        sleep(600);
 
 
     }

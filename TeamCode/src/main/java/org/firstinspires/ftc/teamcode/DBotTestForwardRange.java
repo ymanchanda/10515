@@ -28,23 +28,36 @@ public class DBotTestForwardRange extends DBotBase {
         robot.init(hardwareMap);
         //sleep(2000);
 
-        initVuforia();
-        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
-            initTfod();
-        } else {
-            telemetry.addData("Sorry!", "This device is not compatible with TFOD");
-            telemetry.update();
-        }
-
-        // Send telemetry message to signify robotrt waiting;
-        telemetry.addData("Status", "Ready to run");    //
-        telemetry.update();
+//        initVuforia();
+//        if (ClassFactory.getInstance().canCreateTFObjectDetector()) {
+//            initTfod();
+//        } else {
+//            telemetry.addData("Sorry!", "This device is not compatible with TFOD");
+//            telemetry.update();
+//        }
+//
+//        // Send telemetry message to signify robotrt waiting;
+//        telemetry.addData("Status", "Ready to run");    //
+//        telemetry.update();
 
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
-        move_forward_by_range(0.3, 5);
+      /*  move_forward_by_range(0.3, 5);
         sleep(1000);
         move_backward_by_range(0.3, 10);
+
+*/  while(opModeIsActive())
+        {
+            telemetry.addData("distance", get_right_distance());
+            telemetry.update();
+            //sleep(1000);
+        }
+//        telemetry.addData("front distance",get_Front_Distance());
+//        telemetry.update();
+//        sleep(1000);
+//
+//        move_right_by_range(0.3,5);
+//        sleep(1000);
     }
 }

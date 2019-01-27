@@ -119,11 +119,11 @@ public class DBotAuto4 extends DBotBase
         sleep(50);
         move_right(0.3,12);
         sleep(50);
-        turn_to_heading(135);
+        turn_to_heading(138);
         sleep(50);
-        move_left(0.3,24);
+        move_left(0.4,28);
         sleep(50);
-        move_back(0.3,20);
+        move_back(0.4,20);
         sleep(50);
         turn_to_heading(315);
         sleep(50);
@@ -143,15 +143,15 @@ public class DBotAuto4 extends DBotBase
         sleep(50);
         move_forward(0.3,2);
         sleep(50);
-        move_right( 0.3, 30);
+        move_right( 0.45, 30);
         sleep(50);
-        move_left( 0.3, 20);
+        move_left( 0.45, 20);
         sleep(50);
         turn_to_heading(90);
         sleep(50);
         move_forward(0.3,4);
         sleep(50);
-        move_left(.3,40);
+        move_left(.45,40);
         sleep(50);
         turn_to_heading(315);
         sleep(50);
@@ -163,19 +163,21 @@ public class DBotAuto4 extends DBotBase
         move_sideways_by_range(90,0.3,3.5);
         sleep(50);
         turn_to_heading(318);
-        move_forward(0.3,40);
+        move_forward(0.6,40);
         sleep(100);
         move_forward_by_range(0.3,10);
         sleep(50);
-        turn_to_heading(-10);
+        //turn_to_heading(-10);
         //move_right_by_range(0.3,3);
         sleep(50);
         markerDrop();
         turn_to_heading(318);
         sleep(50);
-        move_right_by_range(0.3,3);
+        //move_right_by_range(0.3,3);
         sleep(100);
-        move_back(0.3,50);
+        markerUp();
+
+        move_back(0.6,50);
 
         //move_backward_by_range(0.3,55);
         sleep(50);
@@ -183,13 +185,17 @@ public class DBotAuto4 extends DBotBase
         move_sideways_by_range(-90,0.3,4.75);
         sleep(50);
         turn_to_heading(135);
+        robot.AA.setPower(0.5);
+        robot.AE.setPower(0.4);
+
         move_left(0.3,2.5);
         sleep(50);
         //move_forward_by_range(0.3,20);
-        move_forward(0.3,17);
-        robot.AA.setPower(0.5);
-        robot.AE.setPower(0.4);
-        sleep(500);
+        move_forward(0.4,15);//17
+//        robot.AA.setPower(0.5);
+//        robot.AE.setPower(0.4);
+//        sleep(500);
+
     }
 
     void composeTelemetry() {

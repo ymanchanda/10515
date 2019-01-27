@@ -63,6 +63,10 @@ public abstract class DBotBase extends LinearOpMode {
         //robot.marker.setPosition(0.8);
 
     }
+    public void markerUp()
+    {
+        robot.marker.setPosition(0.5);
+    }
 
     public void resetEncoders() {
         robot.FR.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -246,7 +250,7 @@ public abstract class DBotBase extends LinearOpMode {
         prev_heading = current_heading;
         while (degrees_to_turn > .5 && opModeIsActive() && timeout_timer.seconds() < 2) {
             //wheel_power = (2 * Math.pow((degrees_to_turn + 13) / 30, 2) + 15) / 100;
-            wheel_power = (0.75 * degrees_to_turn) / 100;
+            wheel_power = (0.85 * degrees_to_turn) / 100;
             if (go_right) {
                 wheel_power = -wheel_power;
             }

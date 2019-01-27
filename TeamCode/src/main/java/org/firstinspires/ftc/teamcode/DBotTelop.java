@@ -202,7 +202,8 @@ public class DBotTelop extends OpMode
             telemetry.update();
         }
 
-        catch(Exception ex) {
+        catch(Exception ex)
+        {
             //do nothing
             ex.printStackTrace();
         }
