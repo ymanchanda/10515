@@ -14,18 +14,21 @@ public class DBotTelop extends OpMode
 {
     /* Declare OpMode members. */
     DBotTeleOpHWMap robot = new DBotTeleOpHWMap();
+    DBotAutoHWMap auto = new DBotAutoHWMap();
 
     final double MOTORMAX = 1.00;
     final double MOTORMIN = -1.00;
-    final double LIFT_UP = 0.75;
-    final double LIFT_DOWN = -0.75;
+    final double LIFT_UP = 0.65;
+    final double LIFT_DOWN = -0.65;
+    final double DEPOSITOR_UP = 0.75;
+    final double DEPOSITOR_DOWN = -0.75;
     final double ARM_UP = 1.00;
     final double ARM_DOWN = -1.00;
-    final double SLIDE_IN = -0.50;
-    final double SLIDE_OUT = 0.50;
+    final double SLIDE_IN = -0.7;
+    final double SLIDE_OUT = 0.70;
     final double SERVOPOWER = 1.0;
     boolean FWD = false;
-    double speedModifier = 0.55;
+    double speedModifier = 0.45;
     double depositorOffset = 0.0;
     double markerOffset = 0;
     boolean ledOn = true;
@@ -100,21 +103,21 @@ public class DBotTelop extends OpMode
 
             //Depositor Lift controls
             if (gamepad1.y) {
-                robot.DL.setPower(0.4);
+                robot.DL.setPower(DEPOSITOR_UP);
             } else if (gamepad1.a) {
-                robot.DL.setPower(-0.5);
+                robot.DL.setPower(DEPOSITOR_DOWN);
             } else
                 robot.DL.setPower(0);
 
             //Depositor Servo controls
             if (gamepad1.x && runtime.time() > 10.0) {
-                depositorOffset += 0.02;
-                depositorOffset = Range.clip(depositorOffset, 0.2, 0.8);
+                depositorOffset += 0.025;
+                depositorOffset = Range.clip(depositorOffset, 0.25, 0.75);
                 robot.depositor.setPosition(depositorOffset);
                 runtime.reset();
             } else if (gamepad1.b && runtime.time() > 10.0) {
-                depositorOffset -= 0.02;
-                depositorOffset = Range.clip(depositorOffset, 0.2, 0.8);
+                depositorOffset -= 0.025;
+                depositorOffset = Range.clip(depositorOffset, .25, 0.75);
                 robot.depositor.setPosition(depositorOffset);
                 runtime.reset();
             }
@@ -130,7 +133,16 @@ public class DBotTelop extends OpMode
                 robot.marker.setPosition(markerOffset);
                 runtime.reset();
             }
-
+            if (gamepad2.dpad_left)
+            {
+                auto.calibrateGyro();
+                telemetry.addData("We calibrated",0);
+                telemetry.update();
+            }
+            if(gamepad2.dpad_right)
+            {
+                //auto.turn_to_heading(0);
+            }
             //Latch Lift controls
             if (gamepad2.dpad_up) {
                 robot.LL.setPower(LIFT_UP);
@@ -201,6 +213,7 @@ public class DBotTelop extends OpMode
             telemetry.addData("Depositor at: ", depositorOffset);
             telemetry.update();
         }
+
 
         catch(Exception ex)
         {
