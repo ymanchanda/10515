@@ -160,12 +160,12 @@ public class DBotAuto4 extends DBotBase
 
     private void goToCrater()
     {
-        move_sideways_by_range(90,0.3,3.5);
+        move_sideways_by_range(90,0.5,4);
         sleep(50);
         turn_to_heading(318);
         move_forward(0.6,40);
-        sleep(100);
-        move_forward_by_range(0.3,10);
+        sleep(50);
+        move_forward_by_range(0.5,10);
         sleep(50);
         //turn_to_heading(-10);
         //move_right_by_range(0.3,3);
@@ -174,7 +174,7 @@ public class DBotAuto4 extends DBotBase
         turn_to_heading(318);
         sleep(50);
         //move_right_by_range(0.3,3);
-        sleep(100);
+        //sleep(100);
         markerUp();
 
         move_back(0.6,50);

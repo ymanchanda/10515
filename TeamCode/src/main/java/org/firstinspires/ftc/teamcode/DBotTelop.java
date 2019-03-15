@@ -20,12 +20,12 @@ public class DBotTelop extends OpMode
     final double MOTORMIN = -1.00;
     final double LIFT_UP = 0.65;
     final double LIFT_DOWN = -0.65;
-    final double DEPOSITOR_UP = 0.75;
-    final double DEPOSITOR_DOWN = -0.75;
+    final double DL_UP = 0.9;
+    final double DL_DOWN = -0.45;
     final double ARM_UP = 1.00;
     final double ARM_DOWN = -1.00;
     final double SLIDE_IN = -0.7;
-    final double SLIDE_OUT = 0.70;
+    final double SLIDE_OUT = 0.7;
     final double SERVOPOWER = 1.0;
     boolean FWD = false;
     double speedModifier = 0.45;
@@ -57,7 +57,7 @@ public class DBotTelop extends OpMode
         telemetry.addData("Started", "Ready for Exploration");
         telemetry.update();
         runtime.reset();
-
+        robot.depositor.setPosition(0.25);
         depositorOffset = robot.depositor.getPosition();
         markerOffset = robot.marker.getPosition();
         robot.colorAE.enableLed(true);
@@ -103,9 +103,9 @@ public class DBotTelop extends OpMode
 
             //Depositor Lift controls
             if (gamepad1.y) {
-                robot.DL.setPower(DEPOSITOR_UP);
+                robot.DL.setPower(DL_UP);
             } else if (gamepad1.a) {
-                robot.DL.setPower(DEPOSITOR_DOWN);
+                robot.DL.setPower(DL_DOWN);
             } else
                 robot.DL.setPower(0);
 

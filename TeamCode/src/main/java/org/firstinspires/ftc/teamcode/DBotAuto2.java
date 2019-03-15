@@ -72,7 +72,7 @@ public class DBotAuto2 extends DBotBase
 
     public void removeCenter()
     {
-        move_sideways_by_range(90, 0.40, 10);
+        move_sideways_by_range(90, 0.40, 12);
         sleep(50);
         move_left_by_range(0.4,20);
         sleep(50);
@@ -80,7 +80,7 @@ public class DBotAuto2 extends DBotBase
         sleep(50);
         move_right_by_range(0.3,4);
         sleep(50);
-        move_forward_by_range(0.3,8);
+        move_forward_by_range(0.3,10);
         //turn_to_heading(45);
         //markerDrop();
 //        sleep(100);
@@ -107,14 +107,14 @@ public class DBotAuto2 extends DBotBase
         sleep(50);
         turn_to_heading(135);
         sleep(50);
-        move_forward(0.3,1.5);
+        move_forward(0.3,.5);
         sleep(50);
         move_left(0.4,45);
         sleep(50);
         move_right(0.3,3);
         turn_to_heading(138);
         sleep(50);
-        move_forward_by_range(0.4,8);
+        move_forward_by_range(0.4,10);
         sleep(50);
         turn_to_heading(45);
         sleep(50);
@@ -152,7 +152,7 @@ public class DBotAuto2 extends DBotBase
         sleep(50);
         move_left_by_range(0.35,7);
         sleep(50);
-        move_forward_by_range(0.35,8);
+        move_forward_by_range(0.35,10);
         sleep(50);
     move_right_by_range(0.35,4);
         goToCrater();
@@ -160,23 +160,23 @@ public class DBotAuto2 extends DBotBase
   private void goToCrater()
     {
         //move_sideways_by_range(90,0.3,4);
-        move_back(0.3,1);
-        sleep(50);
+        //move_back(0.3,1);
+       // sleep(50);
         turn_to_heading(70);
         sleep(50);
         markerDrop();
         turn_to_heading(47);
         sleep(50);
-        move_left_by_range(0.4,21);
+        move_left_by_range(0.4,20);
         markerUp();
         sleep(50);
-        move_forward_by_range(0.3,4);
+        move_forward_by_range(0.4,4);
         sleep(50);
         move_left(0.4,35);
         sleep(50);
         turn_to_heading(318);
         sleep(50);
-        move_sideways_by_range(90,0.3,3);
+        move_sideways_by_range(90,0.4,3);
         sleep(50);
 
 
@@ -186,11 +186,11 @@ public class DBotAuto2 extends DBotBase
 //        sleep(100);
 //        move_sideways_by_range(90,0.3,4);
 //        sleep(100);
-        move_forward(0.4,10);
-
         robot.AE.setPower(0.4);
         robot.AA.setPower(.6);
-        sleep(800);
+        move_forward(0.5,12);
+
+//        sleep(800);
 
     }
 

@@ -28,7 +28,7 @@ public class DBotAuto1 extends DBotBase
     private Acceleration gravity;
     private double headingResetValue;
 
-    private static double speed_value = 0.3;
+    private static double speed_value = 0.3 ;
     @Override
     public void runOpMode() {
 
@@ -84,13 +84,13 @@ public class DBotAuto1 extends DBotBase
     public void removeCenter()
     {
         move_sideways_by_range(90, 0.40, 10);
-        sleep(100);
+        sleep(50);
         turn_to_heading(45);
-        sleep(100);
+        sleep(50);
         move_right(speed_value,2.5);
-        sleep(100);
+        sleep(50);
         move_left(speed_value,2.5);
-        sleep(100);
+        sleep(50);
         move_back(speed_value,7);
         //markerDrop();
         goToCrater();
@@ -99,23 +99,23 @@ public class DBotAuto1 extends DBotBase
     public void removeLeft()
     {
         move_back(speed_value,2);
-        sleep(100);
+        sleep(50);
         move_right(speed_value,12);
-        sleep(100);
+        sleep(50);
         turn_to_heading(135);
-        sleep(100);
+        sleep(50);
         move_forward(speed_value,2);
         move_left(speed_value,45);
-        sleep(100);
+        sleep(50);
         turn_to_heading(138);
         sleep(50);
         move_forward(speed_value,35);
-        sleep(100);
+        sleep(50);
         //markerDrop();
         turn_to_heading(45);
-        sleep(100);
+        sleep(50);
         move_back(speed_value,6);
-        sleep(200);
+        sleep(50);
         //markerDrop();
         goToCrater();
 
@@ -123,25 +123,25 @@ public class DBotAuto1 extends DBotBase
     public void removeRight()
     {
         move_right(speed_value, 2);
-        sleep(100);
+        sleep(50);
         //move_forward(1,speed_value);
         move_forward(speed_value,1);
-        sleep(100);
+        sleep(50);
         turn_to_heading(45);
-        sleep(100);
+        sleep(50);
         //move_sideways(90, speed_value, 40);
         move_forward(speed_value,2);
-        sleep(100);
+        sleep(50);
         move_sideways_by_range(90, speed_value, 5);
-        sleep(100);
+        sleep(50);
         turn_to_heading(45);
-        sleep(100);
+        sleep(50);
         move_right(speed_value,2);
-        sleep(100);
+        sleep(50);
         move_left(speed_value,2);
-        sleep(100);
+        sleep(50);
         move_forward(speed_value,35);
-        sleep(100);
+        sleep(50);
 
         move_back(speed_value,4);
         goToCrater();
@@ -152,23 +152,20 @@ public class DBotAuto1 extends DBotBase
        turn_to_heading(70);
         markerDrop();
         turn_to_heading(45);
-        sleep(100);
+        sleep(50);
         move_sideways_by_range(90,speed_value,3);
-        sleep(100);
+        sleep(50);
         move_back(speed_value,53);
-        sleep(100);
+        sleep(50);
         move_left_by_range(speed_value,4.75);
-        sleep(100);
+        sleep(50);
         turn_to_heading(225);
-        sleep(100);
-        move_forward(speed_value,16);
+        sleep(50);
         //move_sideways(-90,speed_value,3);
-        sleep(100);
         //move_sideways(0,speed_value,30);
-
         robot.AA.setPower(.6);
         robot.AE.setPower(0.4);
-        sleep(600);
+        move_forward(speed_value,16);
 
 
     }
