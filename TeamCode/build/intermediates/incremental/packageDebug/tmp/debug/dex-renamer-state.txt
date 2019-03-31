@@ -1,4 +1,4 @@
-#Tue Jan 29 21:41:11 EST 2019
-base.0=C\:\\Users\\Yogi\\Documents\\GitHub\\10515\\TeamCode\\build\\intermediates\\transforms\\dexMerger\\debug\\17
+#Fri Mar 15 19:28:06 EDT 2019
+base.0=/Users/ssingh/Desktop/GitHub/10515/TeamCode/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

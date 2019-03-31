@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: RobotCore-release:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/jars/libs/javac.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/jars/libs/gson-extras-0.2.1.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/jars/libs/Vuforia.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/jars/libs/support-annotations-23.4.0.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/7070256920f9af0ac251530170cf7316/jars/libs/gson-2.8.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/jars/libs/Vuforia.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/jars/libs/gson-extras-0.2.1.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/jars/libs/gson-2.8.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/jars/libs/javac.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/RobotCore-release.aar/1467ab87c6b4d0d379cd4b50a2594f8d/jars/libs/support-annotations-23.4.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

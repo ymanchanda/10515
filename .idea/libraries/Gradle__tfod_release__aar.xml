@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: tfod-release:@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tfod-release.aar/ca678af69264fd4febe7f3b419f1b4d7/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tfod-release.aar/ca678af69264fd4febe7f3b419f1b4d7/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tfod-release.aar/16747ec5c94e2f4771b0a4e5e09c05d5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/tfod-release.aar/16747ec5c94e2f4771b0a4e5e09c05d5/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
