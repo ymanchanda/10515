@@ -20,8 +20,8 @@ public class DBotTelop extends OpMode
     final double MOTORMIN = -1.00;
     final double LIFT_UP = 0.65;
     final double LIFT_DOWN = -0.65;
-    final double DL_UP = 0.9;
-    final double DL_DOWN = -0.45;
+    final double DL_UP = 1.0;
+    final double DL_DOWN = -1.0;
     final double ARM_UP = 1.00;
     final double ARM_DOWN = -1.00;
     final double SLIDE_IN = -0.7;
